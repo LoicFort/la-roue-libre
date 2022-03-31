@@ -1,75 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-@import './loginPage.scss';
-@import './eventsPage';
-@import './workshopPage.scss';
-@import './vars.scss';
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+@import "./loginPage.scss";
+@import "./eventsPage";
+@import "./workshopPage.scss";
+@import "./vars.scss";
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    image-rendering:optimizeSpeed;
-    overflow-x: hidden;  
+    font-family: "Poppins", sans-serif;
+    image-rendering: optimizeSpeed;
+    overflow-x: hidden;
 }
-
-
 
 // $backgroundColorWhite: rgba(255, 255, 255, 0.466);
 // $backgroundColorBlack: rgba(0, 0, 0, 0.582);
-
 
 // main Page Style
 
 li {
     list-style-type: none;
     color: black;
-    
 }
 
 a {
     text-decoration: none;
-    }
+}
+
+body {
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+}
+
+section {
+    scroll-snap-align: start;
+}
 
 #mainPage {
-   
     width: 100vw;
     height: 100vh;
     overflow: hidden;
     background-color: none;
     position: relative;
-    
+}
+
+.backHome {
+    background-color: $backgroundColorBlack;
+    color: white;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 25vw;
+    padding: 0.5rem;
+    z-index: 10;
 }
 
 .backgroundImage {
-
     .backgroundPicture {
-
-        position: absolute; 
-        image-rendering: optimizeSpeed;            
+        position: absolute;
+        image-rendering: optimizeSpeed;
         top: -6rem;
         left: 0;
         width: 100vw;
         // height: auto;
-        z-index: -10;      
+        z-index: -10;
         overflow-x: hidden;
-        animation: move 30s ease-in-out infinite ;
+        animation: move 30s ease-in-out infinite;
     }
 }
 
-// @keyframes move {
-//     0% {
-//         transform: scale(1);
-//     }
-//     50% {
-//         transform: scale(1.1);
-//     }
-//     100% {
-//         transform: scale(1.0);
-//     }
-    
-// }
-
+@keyframes move {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
 
 header {
     display: flex;
@@ -80,7 +91,6 @@ header {
     width: 25vw;
     background-color: $backgroundColorWhite;
 
-  
     .title__logo {
         background-image: url(../images/logo.png);
         background-size: contain;
@@ -99,19 +109,18 @@ header {
 
     h1 {
         font-size: 2rem;
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
     }
 
     h2 {
         font-size: 1rem;
     }
 
-    h1, h2 {
+    h1,
+    h2 {
         text-align: center;
     }
-
 }
-
 
 nav {
     width: 75vw;
@@ -123,8 +132,6 @@ nav {
         justify-content: space-around;
         align-items: center;
         height: 100%;
-   
-
 
         a {
             height: 100%;
@@ -132,10 +139,8 @@ nav {
             display: flex;
             align-items: center;
             justify-content: center;
-
-
         }
-        
+
         li {
             font-size: 1.5rem;
             height: 100%;
@@ -155,16 +160,12 @@ nav {
 
 .mainPageContainer {
     display: flex;
-    
-
-    
 }
 
 .contact {
     width: 25vw;
     height: 80vh;
     background-color: $backgroundColorWhite;
-    
 
     h4 {
         text-align: center;
@@ -181,12 +182,10 @@ nav {
         flex-direction: column;
         justify-content: center;
 
-        
-            img {
-                display: flex;
-                width: 3rem;
-            }
-        
+        img {
+            display: flex;
+            width: 3rem;
+        }
     }
 }
 
@@ -195,7 +194,6 @@ nav {
     justify-content: space-around;
     background-color: $backgroundColorBlack;
     padding: 0.5rem;
-
 }
 
 .socialMedia__phone {
@@ -206,11 +204,9 @@ nav {
     justify-content: center;
     padding: 0.5rem;
 
-     
-    p{
+    p {
         margin-left: 0.5rem;
     }
-
 }
 
 .socialMedia__maps {
@@ -221,11 +217,9 @@ nav {
     justify-content: center;
     padding: 0.5rem;
 
-     
-    p{
+    p {
         margin-left: 0.5rem;
     }
-
 }
 
 .presentation {
@@ -234,21 +228,13 @@ nav {
     font-size: 2.2rem;
     text-shadow: 1px 1px 1px black;
 
-
     .presentation__title {
         text-align: center;
         padding-top: 1rem;
-        
     }
 
     .presentation__subtitle {
         text-align: right;
         padding-right: 5rem;
     }
-
 }
-
-
-
-
-

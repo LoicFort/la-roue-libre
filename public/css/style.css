@@ -237,7 +237,7 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   image-rendering: optimizeSpeed;
   overflow-x: hidden;
 }
@@ -251,12 +251,34 @@ a {
   text-decoration: none;
 }
 
+body {
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+  height: 100vh;
+}
+
+section {
+  scroll-snap-align: start;
+}
+
 #mainPage {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
   background-color: none;
   position: relative;
+}
+
+.backHome {
+  background-color: rgba(0, 0, 0, 0.582);
+  color: white;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 25vw;
+  padding: 0.5rem;
+  z-index: 10;
 }
 
 .backgroundImage .backgroundPicture {
@@ -269,6 +291,36 @@ a {
   overflow-x: hidden;
   -webkit-animation: move 30s ease-in-out infinite;
           animation: move 30s ease-in-out infinite;
+}
+
+@-webkit-keyframes move {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes move {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 header {
@@ -310,14 +362,15 @@ header {
 
 .title__content h1 {
   font-size: 2rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .title__content h2 {
   font-size: 1rem;
 }
 
-.title__content h1, .title__content h2 {
+.title__content h1,
+.title__content h2 {
   text-align: center;
 }
 
