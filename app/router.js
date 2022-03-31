@@ -10,7 +10,7 @@ const adminController = require('./controllers/adminController');
 
 router.get('/', mainController.showHomePage);
 router.get('/admin', adminController.showLogin);
-// router.post('/admin', adminController.login);
+router.post('/admin', adminController.login);
 router.post('/events', adminController.login);
 router.post('/checkdata', adminController.showData);
 router.get('/la-roue-libre', mainController.showMainPage);
