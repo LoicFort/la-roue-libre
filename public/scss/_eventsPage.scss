@@ -1,0 +1,52 @@
+.button {
+    background-color: black;
+    color: aliceblue;
+    border-radius: 5px;
+    padding: 5px;
+    cursor:pointer;
+    width: 200px;
+    
+    &:hover {
+        background-color: burlywood;
+        color: black;
+
+    }
+}
+
+.back-home {
+    background-color: black;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: aliceblue;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+
+
+.events {
+    display: flex;
+    width: fit-content;
+    height: auto;   
+    align-items: center;
+
+    input {
+        margin: 5px;
+    };
+
+    
+}
+
+.data-render {
+    display: flex;
+    margin: 0.5rem;
+
+    ul {
+        margin: 0.2rem;
+        padding: 0.3rem;
+        background-color: aliceblue;
+        border-radius: 2px;
+    }
+    
+}

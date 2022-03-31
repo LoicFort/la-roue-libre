@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <title>La roue libre</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <a href="#header">
+            <div class="home-button">&#9750</div>
+        </a>
+        La roue libre
+
+        <section id="mainPage">
+
+            <header id="header">
+                <div class="title">
+                    <h2>La roue libre</h1>
+                    <h3>Le café vélo des voyageurs</h2>
+                    <div class="img-container">                    
+                        <img src="/images/coffee.png" alt="">
+                        <img src="/images/bike.svg" alt="">
+                        <img src="/images/burrito.png" alt="">
+                        <img src="/images/pump.png" alt="">
+                        <img src="/images/piknik.png" alt="">
+                        <!-- <a href="https://www.flaticon.com/fr/icones-gratuites/boisson-chaude" title="boisson chaude icônes">Boisson chaude icônes créées par Freepik - Flaticon</a> -->
+                    </div>
+                </div>
+            </header>
+            La roue libre
+
+            <div class="navbar">
+                <nav>
+                    <ul>
+                        <a href="#workshop-page">
+                            <li class="nav-link">atelier</li>
+                        </a>
+                        <a href="#shop-page">
+                            <li class="nav-link">magasin</li>
+                        </a>
+                        <a href="#coffee-page">
+                            <li class="nav-link">café</li>
+                        </a>
+                        <a href="#events-page">
+                            <li class="nav-link">évènements</li>
+                        </a>
+                        <a href="#go-futher-page">
+                            <li class="nav-link">partir...</li>
+                        </a>
+                    </ul>La roue libre
+
+                </nav>
+            </div>
+            <div class="mainPage-container">
+                <div class="contact --container"></p>
+                    <p></p>
+                    <div class="social-network">
+                        <a href="https://www.facebook.com/La-Roue-Libre-Tr%C3%A9voux-103595691886177" target="_blank">
+                            <img src="images/facebook.png" alt="lien vers lesite de al roue libre trevoux">
+                        </a>
+                        <a href="https://twitter.com/larouelibretrvx" target="_blank">
+                            <img src="/images/twitter.png" alt="lien vers twitter la roue libre trevoux">
+                        </a>
+
+                    </div>
+                    <a href="https://www.google.fr/maps/place/La+Roue+Libre+Caf%C3%A9-v%C3%A9lo+Tr%C3%A9voux/@45.9330815,4.7819246,17z/data=!3m1!4b1!4m5!3m4!1s0x47f4919aa91c5f8f:0xf893837326e36469!8m2!3d45.9329594!4d4.7841937"
+                        target="_blanck"> Nous trouver !</a>
+
+
+                </div>
+                <div class="img-container">
+                    <img src="../images/atelier.jpg" alt="atelier vélo avec outils">
+                </div>
+
+
+            </div>
+        </section>
+
+
+
+        <section id="workshop-page">
+            <aside>
+                <h3>L'atelier</h3>
+
+            </aside>
+            <article>
+                <ul>
+                    <li>Réparation de tous types</li>
+                    <li>Recharge gratuite de batteries</li>
+                    <li>Réparation "minute" pour les voyageurs</p>
+                    <li>Montage à la carte</li>
+                    <li>Peinture de votre cadre préféré</p>
+
+                </ul>
+            </article>
+        </section>
+
+        <section id="shop-page">
+            <aside>
+                <h3>Le magasin</h3>
+            </aside>
+            <article>
+                <h2>Des vélos pour les grands voyageurs...</br>mais aussi pour les voyageurs du quotidien! </h2>
+                <ul>
+                    <li>Bicicapace pour la famille</li>
+                    <li>Méral pour le style</li>
+                    <li>Superior pour la perf</li>
+                    <li>Marin pour la polyvalence</li>
+                    <li>Ahooga pour la ville</li>
+                    <li>Et tous les accessoirs pour vos futurs escapades sportives ou loisirs</li>
+                </ul>
+
+            </article>
+        </section>
+
+
+        <section id="coffee-page">
+            <aside>
+                <h3>Le café</h3>
+            </aside>
+            <article>
+
+                <ul>
+                    <li>Bières de brasserie locales</li>
+                    <li>Des plaches pour toutes les envies</li>
+                    <li>Marin pour la polyvalence</li>
+                    <li>la spécialité: burritos végétariens: énergie garantie pour des dizaines de kilomètres en vélo!
+                    </li>
+                    <li>Wifi gratuit en pleine nature</li>
+                </ul>
+
+            </article>
+        </section>
+
+        <section id="events-page">
+            <aside>
+                <h3>Les évènements</h3>
+            </aside>
+            <article>
+
+                <h3>Prochains rdv du mois de <%= data[0].month %>
+                </h3>
+
+                <% for (event of data) { %>
+                    <div class="card-event">
+                        <div class="logo">
+                            <%= event.logo %>
+                        </div>
+                        <div class="day">Le <%= event.day %>
+                        </div>
+                        <h2>
+                            <%= event.title %>
+                        </h2>
+                        <p>
+                            <%= event.description %>
+                        </p>
+                    </div>
+
+                    <% } %>
+
+                        <a href="http://wwww.google.fr">télécharger notre programme</a>
+
+
+
+            </article>
+        </section>
+
+        <section id="go-futher-page">
+            <aside>
+                <h3>Envie de partir ?</h3>
+            </aside>
+
+            <article>
+
+                <div class="leaving-grid">
+                    <div class="card">
+                        <a href="/1">
+                            <figure>
+                                <!-- <img src="images/oneDay.jpg" alt=""> -->
+                                <figcaption>à la journée</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="/2">
+                            <figure>
+                                <!-- <img src="images/weekend.jpg" alt=""> -->
+                                <figcaption>un weekend</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="/3">
+                            <figure>
+                                <!-- <img src="images/oneWeek.jpg" alt=""> -->
+                                <figcaption>à la semaine</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="/4">
+                            <figure>
+                                <!-- <img src="images/forever.jpg" alt=""> -->
+                                <figcaption>pour la vie...</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+
+                </div>
+
+            </article>
+        </section>
+
+    </div>
+
+    </div>
+
+    <script src="js/mainPage.js"></script>
+
+</body>
+
+</html>

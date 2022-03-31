@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/css/style.css">
+    <title>La roue libre</title>
+</head>
+
+<body>
+
+    <h1>Publication d'évènements</h1>
+    <form method="POST" action="/la-roue-libre">
+        <div class="events">
+            <div class="event-card">
+
+                <input type="text" name="year" placeholder="Année" value="2022">
+                <select name="month" placeholder="month">
+                    <option value="">--Quel mois?--</option>
+                    <option value="janvier">janvier</option>
+                    <option value="février">février</option>
+                    <option value="mars">mars</option>
+                    <option value="avril">avril</option>
+                    <option value="mai">mai</option>
+                    <option value="juin">juin</option>
+                    <option value="juillet">juillet</option>
+                    <option value="aout">aout</option>
+                    <option value="septembre">septembre</option>
+                    <option value="octobre">octobre</option>
+                    <option value="novembre">novembre</option>
+                    <option value="décembre">décembre</option>
+
+                </select>
+                <input type="text" name="day" placeholder="Jour de l'évènement">
+                <select name="logo" placeholder="logo">
+                    <option value="">--choisir type logo--</option>
+                    <option value="balade">Balade</option>
+                    <option value="projection">Projection</option>
+                    <option value="mécanique">Mécanique</option>
+                    <option value="jeux">Jeux</option>
+                    <option value="musique">Musique</option>
+                </select>
+                <input type="text" name="title" placeholder="Titre">
+                <textarea name="description" placeholder="Description" cols="20" rows="5"></textarea>
+
+                <input type="reset">
+            </div>
+        </div>
+        <!-- <div class="button">Ajouter</div> -->
+        <button class="publish">Publier</button>
+
+    </form>
+
+    <a class="back-home" href="http://localhost:5000/la-roue-libre">Retour au site!</a>
+
+    <div class="preview">
+        <h3>Apercu des données</h3>
+        <form action="/checkdata" method="POST">
+            <select name="month" placeholder="month">
+                <option value="">--Quel mois?--</option>
+                <option value="janvier">janvier</option>
+                <option value="février">février</option>
+                <option value="mars">mars</option>
+                <option value="avril">avril</option>
+                <option value="mai">mai</option>
+                <option value="juin">juin</option>
+                <option value="juillet">juillet</option>
+                <option value="aout">aout</option>
+                <option value="septembre">septembre</option>
+                <option value="octobre">octobre</option>
+                <option value="novembre">novembre</option>
+                <option value="décembre">décembre</option>
+
+            </select>
+
+            <button>Aperçu</button>
+
+
+
+        </form>
+        <div class="data-render">
+       <% if(typeof data == 'object') { %>
+        <% for (event of data) { %>
+            
+                <ul>
+                    <li><%= event.year %></li>
+                    <li><%= event.month %></li>
+                    <li><%= event.day %></li>
+                    <li><%= event.logo %></li>
+                    <li><%= event.title %></li>
+                    <li><%= event.description %></li>      
+                    <li>ID = <%= event.id %></li>
+                </ul>
+                
+                
+
+       <% }} %>
+            
+
+            </div>
+  
+
+    
+
+    <script src="js/events.js"></script>
+
+</body>
+
+</html>

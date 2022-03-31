@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import './loginPage.scss';
+@import './eventsPage';
+@import './workshopPage.scss';
+@import './vars.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    image-rendering:optimizeSpeed;
+    overflow-x: hidden;  
+}
+
+
+
+// $backgroundColorWhite: rgba(255, 255, 255, 0.466);
+// $backgroundColorBlack: rgba(0, 0, 0, 0.582);
+
+
+// main Page Style
+
+li {
+    list-style-type: none;
+    color: black;
+    
+}
+
+a {
+    text-decoration: none;
+    }
+
+#mainPage {
+   
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: none;
+    position: relative;
+    
+}
+
+.backgroundImage {
+
+    .backgroundPicture {
+
+        position: absolute; 
+        image-rendering: optimizeSpeed;            
+        top: -6rem;
+        left: 0;
+        width: 100vw;
+        // height: auto;
+        z-index: -10;      
+        overflow-x: hidden;
+        animation: move 30s ease-in-out infinite ;
+    }
+}
+
+// @keyframes move {
+//     0% {
+//         transform: scale(1);
+//     }
+//     50% {
+//         transform: scale(1.1);
+//     }
+//     100% {
+//         transform: scale(1.0);
+//     }
+    
+// }
+
+
+header {
+    display: flex;
+}
+
+.title {
+    display: flex;
+    width: 25vw;
+    background-color: $backgroundColorWhite;
+
+  
+    .title__logo {
+        background-image: url(../images/logo.png);
+        background-size: contain;
+        background-position: center;
+        height: 20vh;
+        width: 10vw;
+        background-repeat: no-repeat;
+    }
+}
+
+.title__content {
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+        font-size: 2rem;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    h1, h2 {
+        text-align: center;
+    }
+
+}
+
+
+nav {
+    width: 75vw;
+    background-color: $backgroundColorWhite;
+    overflow-x: hidden;
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+   
+
+
+        a {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+        }
+        
+        li {
+            font-size: 1.5rem;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s ease;
+
+            &:hover {
+                background-color: $backgroundColorBlack;
+                color: white;
+            }
+        }
+    }
+}
+
+.mainPageContainer {
+    display: flex;
+    
+
+    
+}
+
+.contact {
+    width: 25vw;
+    height: 80vh;
+    background-color: $backgroundColorWhite;
+    
+
+    h4 {
+        text-align: center;
+        font-size: 1.2rem;
+        padding: 1rem;
+        background-color: $backgroundColorBlack;
+        color: white;
+    }
+
+    .socialMedia {
+        display: flex;
+        height: 85%;
+        width: 25vw;
+        flex-direction: column;
+        justify-content: center;
+
+        
+            img {
+                display: flex;
+                width: 3rem;
+            }
+        
+    }
+}
+
+.gafa {
+    display: flex;
+    justify-content: space-around;
+    background-color: $backgroundColorBlack;
+    padding: 0.5rem;
+
+}
+
+.socialMedia__phone {
+    background-color: $backgroundColorBlack;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+
+     
+    p{
+        margin-left: 0.5rem;
+    }
+
+}
+
+.socialMedia__maps {
+    background-color: $backgroundColorBlack;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+
+     
+    p{
+        margin-left: 0.5rem;
+    }
+
+}
+
+.presentation {
+    color: aliceblue;
+    width: 75vw;
+    font-size: 2.2rem;
+    text-shadow: 1px 1px 1px black;
+
+
+    .presentation__title {
+        text-align: center;
+        padding-top: 1rem;
+        
+    }
+
+    .presentation__subtitle {
+        text-align: right;
+        padding-right: 5rem;
+    }
+
+}
+
+
+
+
+

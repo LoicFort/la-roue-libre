@@ -1,0 +1,132 @@
+// workshop style
+
+@import "./vars";
+
+#workshopPage, #shopPage, #coffeePage, #leavingPage {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    overflow: hidden;
+
+    .backgroundPicture {
+        
+        width: 100vw;
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        z-index: -5;
+    }
+}
+
+.sideBar {
+    width: 25vw;
+    height: 100vh;
+    background-color: $backgroundColorWhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h4 {        
+        
+        font-size: 2.2rem;
+    }
+}
+
+.container {
+    width: 65vw;
+    margin: 3rem;
+    background-color: $backgroundColorWhite;
+    border-radius: 2rem;
+    overflow-y: hidden;
+    
+    h5 {
+        
+        background-color: $backgroundColorBlack;
+        color: white;
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 2rem;
+    }
+}
+
+.content {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+
+}
+
+#leavingPage {
+    .backgroundPicture {
+        top: -10rem;     
+
+}  
+
+.cardsContainer {
+    width: 75vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+    .card {
+        width: 30vw;
+        height: 40vh;
+        background-color: aqua;
+        border-radius: 1rem;
+        transition: 0.3s;
+
+        &:hover {
+            transform: scale(1.009);
+            
+        }
+
+        h5 {
+            color:white;
+            background-color: $backgroundColorBlack;
+            padding: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+
+    }
+
+}
+
+
+}
+
+.oneDay {
+    background-image: url('/images/oneDay.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.weekend {
+    background-image: url('/images/weekend.jpg');
+    background-size: cover;
+    background-position: center;
+
+}
+
+.oneWeek {
+    background-image: url('/images/oneWeek.jpg');
+    background-size: cover;
+    background-position: center;
+
+}
+
+.forever {
+    background-image: url('/images/forever.jpg');
+    background-size: cover;
+    background-position: center;
+}

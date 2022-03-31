@@ -1,0 +1,33 @@
+.login-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:lightgray;
+
+    h2 {
+        margin-bottom: 1rem;
+    }
+
+    .input-fields {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        min-height: 20vh;
+        padding: 1rem;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 3px 2px 10px 0px rgba(0, 0, 0, 0.637);
+        border-radius: 5px;
+
+       
+        
+    }
+    
+    
+    
+    
+   
+    
+}
