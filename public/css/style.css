@@ -85,6 +85,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin: 0.5rem;
 }
 
@@ -95,7 +97,11 @@
   border-radius: 2px;
 }
 
-#workshopPage, #shopPage, #coffeePage, #leavingPage, #eventsPage {
+#workshopPage,
+#shopPage,
+#coffeePage,
+#leavingPage,
+#eventsPage {
   position: relative;
   height: 100vh;
   width: 100vw;
@@ -105,7 +111,11 @@
   overflow: hidden;
 }
 
-#workshopPage .backgroundPicture, #shopPage .backgroundPicture, #coffeePage .backgroundPicture, #leavingPage .backgroundPicture, #eventsPage .backgroundPicture {
+#workshopPage .backgroundPicture,
+#shopPage .backgroundPicture,
+#coffeePage .backgroundPicture,
+#leavingPage .backgroundPicture,
+#eventsPage .backgroundPicture {
   width: 100vw;
   position: absolute;
   overflow: hidden;
@@ -134,7 +144,7 @@
 }
 
 .container {
-  width: 65vw;
+  width: 67vw;
   margin: 3rem;
   background-color: rgba(255, 255, 255, 0.705);
   border-radius: 2rem;
@@ -232,6 +242,85 @@
   background-position: center;
 }
 
+#eventsPage .events__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#eventsPage .container {
+  overflow-y: scroll;
+}
+
+#eventsPage .container ::-webkit-scrollbar {
+  width: 3rem;
+}
+
+#eventsPage .container ::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.582);
+}
+
+#eventsPage .event__card {
+  background-color: rgba(255, 255, 255, 0.705);
+  width: 10rem;
+  height: 10rem;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  overflow: hidden;
+  -webkit-box-shadow: 1px 1px 6px 0px black;
+          box-shadow: 1px 1px 6px 0px black;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 0.6fr 1.4fr;
+      grid-template-rows: 1fr 0.6fr 1.4fr;
+      grid-template-areas: ". ." "event__title event__title" "event__description event__description";
+  gap: 0.1rem 0.1rem;
+}
+
+#eventsPage .event__card .event__day {
+  font-size: 2rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+#eventsPage .event__card .event__logo {
+  width: 75%;
+  height: 100%;
+  padding: 0.2rem;
+  overflow: hidden;
+}
+
+#eventsPage .event__card .event__title,
+#eventsPage .event__card .event__description {
+  font-size: 0.8rem;
+  overflow: hidden;
+}
+
+#eventsPage .event__card .event__title {
+  background-color: rgba(0, 0, 0, 0.582);
+  color: aquamarine;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: event__title;
+  text-align: center;
+}
+
+#eventsPage .event__card .event__description {
+  font-style: italic;
+  padding: 0.2rem;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: event__description;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -255,6 +344,21 @@ body {
   -ms-scroll-snap-type: y mandatory;
       scroll-snap-type: y mandatory;
   height: 100vh;
+}
+
+body ::-webkit-scrollbar {
+  width: 1rem;
+}
+
+body ::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.582);
+  height: 80%;
+  border-radius: 2rem;
+}
+
+body ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.705);
+  border-radius: 2rem;
 }
 
 section {

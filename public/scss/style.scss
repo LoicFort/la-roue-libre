@@ -30,6 +30,22 @@ a {
 body {
     scroll-snap-type: y mandatory;
     height: 100vh;
+    ::-webkit-scrollbar {
+        width: 1rem;
+
+    }
+    ::-webkit-scrollbar-track {
+        background: $backgroundColorBlack;
+       height: 80%;
+       border-radius: 2rem;
+
+        
+    }
+    ::-webkit-scrollbar-thumb {
+        background: $backgroundColorWhite;
+        border-radius: 2rem;
+        
+    }
 }
 
 section {

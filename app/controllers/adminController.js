@@ -53,9 +53,9 @@ const adminController = {
     },
 
     showData: (req, res) => {
-        const month = req.body.month;
-        // console.log(month);
-        dataMapper.getEvents(month, (err, results) => {
+        const data = req.body.month;        
+        dataMapper.getEvents(data, (err, results) => {
+            // console.log(results)
             const data = results.rows;
             res.render('eventsForm', { data })
             

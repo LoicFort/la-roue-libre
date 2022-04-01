@@ -4,7 +4,7 @@ const dataMapper = {
 
     checkLogin: (name, password, callback) => {
 
-        console.log(typeof(name))
+        console.log(typeof (name))
 
         const query = {
             text: `SELECT * FROM "admin" WHERE name=$1 AND password=$2`,
@@ -22,34 +22,36 @@ const dataMapper = {
 
 
         const query = {
-            text: `SELECT * FROM "events" WHERE "month" = $1`,
+            text: `SELECT * FROM "events" WHERE "month" = $1 ORDER BY "day"`,
             values: [todayString]
         }
 
         database.query(query, callback);
-        console.log(callback);
+        // console.log(callback);
     },
 
     createEvents: (data, callback) => {
 
-       
-            const query = {
-                text: `INSERT INTO "events"("year", "month", "day", "logo", "title", "description") VALUES ($1, $2, $3, $4,$5, $6)`,
-                values: [data.year, data.month, data.day, data.logo, data.title, data.description]
-            }
-       
-        
-        
+
+        const query = {
+            text: `INSERT INTO "events"("year", "month", "day", "logo", "title", "description") VALUES ($1, $2, $3, $4,$5, $6)`,
+            values: [data.year, data.month, data.day, data.logo, data.title, data.description]
+        }
+
+
+
         database.query(query, callback);
 
     },
 
     getEvents: (data, callback) => {
+        
         const query = {
-            text: `SELECT * FROM "events" WHERE "month" = $1`,
+            text: `SELECT * FROM "events" WHERE "month" = $1 ORDER BY "day"`,
             values: [data]
-        }
 
+        }
+        
         database.query(query, callback);
 
     }

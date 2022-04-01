@@ -15,10 +15,7 @@
     <!-- 6 sections: 1 page d'accueil avec 1 hedaer /navbar ... + 5 sections avec la même structure side bar + content -->
 
     <section id="mainPage">
-        <a href="#mainPage">
-
-            <div class="backHome">Retour accueil</div>
-        </a>
+       
 
         <div class="backgroundImage">
             <img class="backgroundPicture" src="/images/canyon.jpg" alt="vélo de randonnée devant grand canyon">
@@ -115,6 +112,9 @@
     <!-- workshop -->
 
     <section id="workshopPage">
+        <a href="#mainPage">
+            <div class="backHome">Retour accueil</div>
+        </a>
         <img src="/images/atelier.jpeg" alt="" class="backgroundPicture">
         <div class="sideBar">
             <h4>L'atelier</h4>
@@ -188,9 +188,21 @@
             <h4>Evènenements</h4>
         </div>
         <div class="container">
-            <h5>Les évènements du mois de </h5>
-            <div class="content">
+            <h5>Les évènements du mois de <% if (data[0] !== undefined) { %>
+                <%= data[0].month %> 
+                <% } else { %>
+                    ...
+                <% } %></h5>
+            <div class="events__content">
+                <% for (const event of data) { %>
+                <div class="event__card">                    
+                        <img class="event__logo" src="/images/logo/<%= event.logo %>.png" alt="logo <%= event.logo%>">                    
+                    <div class="event__day"><%= event.day %></div>
+                    <div class="event__title"><%= event.title %></div>
+                    <div class="event__description"><%= event.description %></div>
+                </div>
                 
+                <% } %>
             </div>
         </div>
 
