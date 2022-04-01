@@ -17,7 +17,7 @@ const dataMapper = {
 
     getMonthEvents: (callback) => {
         const today = new Date();
-        const todayString = today.toLocaleString('default', { month: 'long' });
+        const todayString = today.toLocaleString('fr-FR', { month: 'long' });
         console.log(todayString)
         const query = {
             text: `SELECT * FROM "events" WHERE "month" = $1 ORDER BY "day"`,
