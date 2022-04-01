@@ -13,7 +13,7 @@ router.get('/admin', adminController.showLogin);
 router.post('/admin', adminController.login);
 router.post('/events', adminController.login);
 router.post('/checkdata', adminController.showData);
-router.get('/la-roue-libre', mainController.showMainPage);
-router.post('/la-roue-libre', adminController.editMainPage);
+// router.get('/la-roue-libre', mainController.showMainPage);
+// router.post('/la-roue-libre', adminController.editMainPage);
 
 module.exports = router;

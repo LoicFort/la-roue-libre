@@ -13,7 +13,10 @@ const mainController = {
             }
 
             const data = results.rows;
-            console.log(data);
+            console.log(results);
+            console.log(results.rows)
+            // console.log("data" + data);
+            // console.log("data" + data[0]);
             res.render('laRoueLibre.ejs', { data });
 
 
