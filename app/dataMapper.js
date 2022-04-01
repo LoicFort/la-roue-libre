@@ -25,7 +25,7 @@ const dataMapper = {
         }
 
         database.query(query, callback);
-        // console.log(callback);
+        console.log('getmonthevents')
     },
 
     createEvents: (data, callback) => {
