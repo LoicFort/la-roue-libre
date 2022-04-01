@@ -9,11 +9,12 @@ const adminController = {
     login: (req, res) => {
 
         const name = req.body.name;
-        const password = req.body.password;
+        const password = req.body.password;       
 
         dataMapper.checkLogin(name, password, (err, results) => {
 
             const login = results.rows[0];
+            console.log(results);
 
             if (!login || login.name !== name && login.password) {
                 res.send('erreur de login/MDP')

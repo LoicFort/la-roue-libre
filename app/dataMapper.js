@@ -4,6 +4,8 @@ const dataMapper = {
 
     checkLogin: (name, password, callback) => {
 
+        console.log(typeof(name))
+
         const query = {
             text: `SELECT * FROM "admin" WHERE name=$1 AND password=$2`,
             values: [name, password]
@@ -25,6 +27,7 @@ const dataMapper = {
         }
 
         database.query(query, callback);
+        console.log(callback);
     },
 
     createEvents: (data, callback) => {
