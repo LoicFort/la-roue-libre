@@ -8,7 +8,7 @@ const mainController = require('./controllers/mainController');
 const adminController = require('./controllers/adminController');
 
 
-router.get('/', mainController.showHomePage);
+router.get('/', mainController.showMainPage);
 router.get('/admin', adminController.showLogin);
 router.post('/admin', adminController.login);
 router.post('/events', adminController.login);

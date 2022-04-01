@@ -95,7 +95,7 @@
   border-radius: 2px;
 }
 
-#workshopPage, #shopPage, #coffeePage, #leavingPage {
+#workshopPage, #shopPage, #coffeePage, #leavingPage, #eventsPage {
   position: relative;
   height: 100vh;
   width: 100vw;
@@ -105,7 +105,7 @@
   overflow: hidden;
 }
 
-#workshopPage .backgroundPicture, #shopPage .backgroundPicture, #coffeePage .backgroundPicture, #leavingPage .backgroundPicture {
+#workshopPage .backgroundPicture, #shopPage .backgroundPicture, #coffeePage .backgroundPicture, #leavingPage .backgroundPicture, #eventsPage .backgroundPicture {
   width: 100vw;
   position: absolute;
   overflow: hidden;
