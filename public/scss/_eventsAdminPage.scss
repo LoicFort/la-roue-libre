@@ -1,0 +1,24 @@
+.adminEventsContainer {
+    padding: 1rem;
+
+        
+}
+
+.event__card {
+    position: relative;
+
+    .deleteButton {
+        position: absolute;
+        top: 0;
+        right: 0.1rem;
+        background-color: red;
+        width: fit-content;
+        margin: 0.1rem;
+        padding: 0.2rem;
+        border-radius: 5px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

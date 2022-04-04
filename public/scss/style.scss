@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+@import "./vars.scss";
 @import "./loginPage.scss";
 @import "./eventsPage";
 @import "./workshopPage.scss";
-@import "./vars.scss";
+@import "./eventsAdminPage.scss";
+
 
 * {
     margin: 0;

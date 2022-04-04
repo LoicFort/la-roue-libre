@@ -242,7 +242,7 @@
   background-position: center;
 }
 
-#eventsPage .events__content {
+#eventsPage .events__content, .data-render .events__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -252,19 +252,19 @@
       justify-content: space-around;
 }
 
-#eventsPage .container {
+#eventsPage .container, .data-render .container {
   overflow-y: scroll;
 }
 
-#eventsPage .container ::-webkit-scrollbar {
+#eventsPage .container ::-webkit-scrollbar, .data-render .container ::-webkit-scrollbar {
   width: 3rem;
 }
 
-#eventsPage .container ::-webkit-scrollbar-track {
+#eventsPage .container ::-webkit-scrollbar-track, .data-render .container ::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.582);
 }
 
-#eventsPage .event__card {
+#eventsPage .event__card, .data-render .event__card {
   background-color: rgba(255, 255, 255, 0.705);
   width: 10rem;
   height: 10rem;
@@ -283,13 +283,13 @@
   gap: 0.1rem 0.1rem;
 }
 
-#eventsPage .event__card .event__day {
+#eventsPage .event__card .event__day, .data-render .event__card .event__day {
   font-size: 2rem;
   overflow: hidden;
   text-align: center;
 }
 
-#eventsPage .event__card .event__logo {
+#eventsPage .event__card .event__logo, .data-render .event__card .event__logo {
   width: 75%;
   height: 100%;
   padding: 0.2rem;
@@ -297,12 +297,13 @@
 }
 
 #eventsPage .event__card .event__title,
-#eventsPage .event__card .event__description {
+#eventsPage .event__card .event__description, .data-render .event__card .event__title,
+.data-render .event__card .event__description {
   font-size: 0.8rem;
   overflow: hidden;
 }
 
-#eventsPage .event__card .event__title {
+#eventsPage .event__card .event__title, .data-render .event__card .event__title {
   background-color: rgba(0, 0, 0, 0.582);
   color: aquamarine;
   -ms-grid-row: 2;
@@ -312,13 +313,38 @@
   text-align: center;
 }
 
-#eventsPage .event__card .event__description {
+#eventsPage .event__card .event__description, .data-render .event__card .event__description {
   font-style: italic;
   padding: 0.2rem;
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: event__description;
+}
+
+.adminEventsContainer {
+  padding: 1rem;
+}
+
+.event__card {
+  position: relative;
+}
+
+.event__card .deleteButton {
+  position: absolute;
+  top: 0;
+  right: 0.1rem;
+  background-color: red;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0.1rem;
+  padding: 0.2rem;
+  border-radius: 5px;
+}
+
+.event__card .deleteButton:hover {
+  cursor: pointer;
 }
 
 * {

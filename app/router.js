@@ -12,7 +12,9 @@ router.get('/', mainController.showMainPage);
 router.get('/admin', adminController.showLogin);
 router.post('/admin', adminController.login);
 router.post('/events', adminController.login);
+router.delete('/event', adminController.deleteOneEvent);
 router.post('/checkdata', adminController.showData);
+
 router.get('/la-roue-libre', mainController.showMainPage);
 router.post('/la-roue-libre', adminController.editMainPage);
 

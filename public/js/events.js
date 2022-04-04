@@ -24,3 +24,10 @@
   
 //   })
 
+
+const deleteBtn = document.getElementsByClassName('.deleteButton');
+
+deleteBtn.addEventListener('click', (e) => {
+    console.log('click')
+    
+})

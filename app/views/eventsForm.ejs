@@ -11,13 +11,56 @@
 </head>
 
 <body>
+    <div class="adminEventsContainer">
 
-    <h1>Publication d'évènements</h1>
-    <form method="POST" action="/la-roue-libre">
-        <div class="events">
-            <div class="event-card">
 
-                <input type="text" name="year" placeholder="Année" value="2022">
+        <h1>Publication d'évènements</h1>
+        <form method="POST" action="/la-roue-libre">
+            <div class="events">
+                <div class="event-card">
+
+                    <input type="text" name="year" placeholder="Année" value="2022">
+                    <select name="month" placeholder="month">
+                        <option value="">--Quel mois?--</option>
+                        <option value="janvier">janvier</option>
+                        <option value="février">février</option>
+                        <option value="mars">mars</option>
+                        <option value="avril">avril</option>
+                        <option value="mai">mai</option>
+                        <option value="juin">juin</option>
+                        <option value="juillet">juillet</option>
+                        <option value="aout">aout</option>
+                        <option value="septembre">septembre</option>
+                        <option value="octobre">octobre</option>
+                        <option value="novembre">novembre</option>
+                        <option value="décembre">décembre</option>
+
+                    </select>
+                    <input type="text" name="day" placeholder="Jour de l'évènement">
+                    <select name="logo" placeholder="logo">
+                        <option value="">--choisir type logo--</option>
+                        <option value="balade">Balade</option>
+                        <option value="projection">Projection</option>
+                        <option value="mécanique">Mécanique</option>
+                        <option value="jeux">Jeux</option>
+                        <option value="musique">Musique</option>
+                    </select>
+                    <input type="text" name="title" placeholder="Titre">
+                    <textarea name="description" placeholder="Description" cols="20" rows="5"></textarea>
+
+                    <input type="reset">
+                </div>
+            </div>
+            <!-- <div class="button">Ajouter</div> -->
+            <button class="publish">Publier</button>
+
+        </form>
+
+        <a class="back-home" href="https://la-roue-libre-trevoux.herokuapp.com">Retour au site!</a>
+
+        <div class="preview">
+            <h3>Apercu des données</h3>
+            <form action="/checkdata" method="POST">
                 <select name="month" placeholder="month">
                     <option value="">--Quel mois?--</option>
                     <option value="janvier">janvier</option>
@@ -34,78 +77,44 @@
                     <option value="décembre">décembre</option>
 
                 </select>
-                <input type="text" name="day" placeholder="Jour de l'évènement">
-                <select name="logo" placeholder="logo">
-                    <option value="">--choisir type logo--</option>
-                    <option value="balade">Balade</option>
-                    <option value="projection">Projection</option>
-                    <option value="mécanique">Mécanique</option>
-                    <option value="jeux">Jeux</option>
-                    <option value="musique">Musique</option>
-                </select>
-                <input type="text" name="title" placeholder="Titre">
-                <textarea name="description" placeholder="Description" cols="20" rows="5"></textarea>
 
-                <input type="reset">
+                <button>Aperçu</button>
+
+
+
+            </form>
+            <div class="data-render">
+
+                <% if(typeof data=='object' ) { %>
+                    <% for (event of data) { %>
+                        <div class="event__card">
+                            <img class="event__logo" src="/images/logo/<%= event.logo %>.png"
+                                alt="logo <%= event.logo%>">
+                            <div class="event__day">
+                                <%= event.day %>
+                            </div>
+                            <div class="event__title">
+                                <%= event.title %>
+                            </div>
+                            <div class="event__description">
+                                <%= event.description %>
+                            </div>
+                            <div class="deleteButton">X</div>
+                        </div>
+
+
+
+                        <% }} %>
+
+
             </div>
+
+
+
         </div>
-        <!-- <div class="button">Ajouter</div> -->
-        <button class="publish">Publier</button>
+    </div>
+        <script src="js/events.js"></script>
 
-    </form>
-
-    <a class="back-home" href="https://la-roue-libre-trevoux.herokuapp.com">Retour au site!</a>
-
-    <div class="preview">
-        <h3>Apercu des données</h3>
-        <form action="/checkdata" method="POST">
-            <select name="month" placeholder="month">
-                <option value="">--Quel mois?--</option>
-                <option value="janvier">janvier</option>
-                <option value="février">février</option>
-                <option value="mars">mars</option>
-                <option value="avril">avril</option>
-                <option value="mai">mai</option>
-                <option value="juin">juin</option>
-                <option value="juillet">juillet</option>
-                <option value="aout">aout</option>
-                <option value="septembre">septembre</option>
-                <option value="octobre">octobre</option>
-                <option value="novembre">novembre</option>
-                <option value="décembre">décembre</option>
-
-            </select>
-
-            <button>Aperçu</button>
-
-
-
-        </form>
-        <div class="data-render">
-       <% if(typeof data == 'object') { %>
-        <% for (event of data) { %>
-            
-                <ul>
-                    <li><%= event.year %></li>
-                    <li><%= event.month %></li>
-                    <li><%= event.day %></li>
-                    <li><%= event.logo %></li>
-                    <li><%= event.title %></li>
-                    <li><%= event.description %></li>      
-                    <li>ID = <%= event.id %></li>
-                </ul>
-                
-                
-
-       <% }} %>
-            
-
-            </div>
-  
-
-    
-
-    <script src="js/events.js"></script>
 
 </body>
 

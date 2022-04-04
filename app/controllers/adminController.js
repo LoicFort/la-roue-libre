@@ -13,8 +13,12 @@ const adminController = {
 
         dataMapper.checkLogin(name, password, (err, results) => {
 
+            if (err) { 
+                console.debug(err)
+            }
+
             const login = results.rows[0];
-            console.log(results);
+            // console.log(results);
 
             if (!login || login.name !== name && login.password) {
                 res.send('erreur de login/MDP')
@@ -60,6 +64,13 @@ const adminController = {
             res.render('eventsForm', { data })
             
         })
+
+
+    },
+
+    deleteOneEvent: (req, res)  => {
+        console.log('delete')
+
 
 
     }
