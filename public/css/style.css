@@ -119,8 +119,8 @@
 #leavingPage p,
 #eventsPage p {
   background-color: rgba(255, 255, 255, 0.705);
-  width: 11rem;
-  height: 11rem;
+  width: 10rem;
+  height: 10rem;
   border-radius: 0.5rem;
   margin: 0.5rem;
   display: -webkit-box;
@@ -136,6 +136,18 @@
   font-size: 1rem;
   -webkit-box-shadow: 1px 1px 6px 0px black;
           box-shadow: 1px 1px 6px 0px black;
+  padding: 0.2rem;
+}
+
+#workshopPage .--bigCard,
+#shopPage .--bigCard,
+#coffeePage .--bigCard,
+#leavingPage .--bigCard,
+#eventsPage .--bigCard {
+  width: 12rem;
+  height: 12rem;
+  background-color: rgba(0, 0, 0, 0.808);
+  color: white;
 }
 
 #workshopPage .backgroundPicture,
@@ -200,11 +212,13 @@
   -ms-flex-pack: distribute;
       justify-content: space-around;
   font-size: 1.5rem;
-  font-weight: bold;
+  overflow: hidden;
 }
 
-#leavingPage .backgroundPicture {
-  top: -10rem;
+#leavingPage {
+  background-image: url("/images/forever.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 #leavingPage .cardsContainer {
@@ -262,7 +276,7 @@
 }
 
 .forever {
-  background-image: url("/images/forever.jpg");
+  background-image: url("/images/leaving.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -277,10 +291,6 @@
       justify-content: space-around;
 }
 
-#eventsPage .container, .data-render .container {
-  overflow-y: scroll;
-}
-
 #eventsPage .container ::-webkit-scrollbar, .data-render .container ::-webkit-scrollbar {
   width: 3rem;
 }
@@ -291,10 +301,8 @@
 
 #eventsPage .event__card, .data-render .event__card {
   background-color: rgba(255, 255, 255, 0.705);
-  width: 10rem;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  width: 180px;
+  height: 180px;
   border-radius: 0.5rem;
   margin: 0.5rem;
   overflow: hidden;
@@ -406,6 +414,7 @@ body ::-webkit-scrollbar {
 }
 
 body ::-webkit-scrollbar-track {
+  display: none;
   background: rgba(0, 0, 0, 0.808);
   height: 80%;
   border-radius: 2rem;
@@ -429,6 +438,7 @@ section {
 }
 
 .backHome {
+  display: none;
   background-color: rgba(0, 0, 0, 0.808);
   color: white;
   text-align: center;

@@ -14,11 +14,13 @@
     flex-wrap: wrap;
     overflow: hidden;
 
+
+// p = card / tuile avec infos pour chaque rubrique workshop, coffee...
     p {
 
         background-color: $backgroundColorWhite;
-        width: 11rem;
-        height: 11rem;
+        width: 10rem;
+        height: 10rem;
         border-radius: 0.5rem;
         margin: 0.5rem;
         display:flex;
@@ -27,8 +29,16 @@
         text-align: center;
         font-size: 1rem;
         box-shadow: 1px 1px 6px 0px black;
+        padding:0.2rem;
 
 
+    }
+
+    .--bigCard {
+        width: 12rem;
+        height: 12rem;
+        background-color: $backgroundColorBlack;
+        color: white;
     }
 
     .backgroundPicture {
@@ -78,13 +88,15 @@
     align-items: center;
     justify-content: space-around;
     font-size: 1.5rem;
-    font-weight: bold;
+    overflow: hidden;
 }
 
 #leavingPage {
-    .backgroundPicture {
-        top: -10rem;
-    }
+
+    background-image: url("/images/forever.jpg");
+    background-size: cover;
+    background-position: center;
+    
 
     .cardsContainer {
         width: 88vw;
@@ -134,7 +146,7 @@
 }
 
 .forever {
-    background-image: url("/images/forever.jpg");
+    background-image: url("/images/leaving.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -150,7 +162,7 @@
         
     }
     .container {
-    overflow-y: scroll;
+    // overflow-y: scroll;
     ::-webkit-scrollbar {
         width: 3rem;
 
@@ -164,8 +176,8 @@
 
     .event__card {
         background-color: $backgroundColorWhite;
-        width: 10rem;
-        height: fit-content;
+        width: 180px;
+        height: 180px;
         border-radius: 0.5rem;
         margin: 0.5rem;
         overflow: hidden;

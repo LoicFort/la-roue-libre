@@ -7,12 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+
     <title>La roue Libre Trévoux</title>
 </head>
 
 <body>
 
-    <!-- 6 sections: 1 page d'accueil avec 1 hedaer /navbar ... + 5 sections avec la même structure side bar + content -->
+    <!-- 6 sections: 1 page d'accueil avec 1 header /navbar ... + 5 sections avec la même structure side bar + content -->
 
     <section id="mainPage">
 
@@ -123,7 +124,7 @@
         <div class="container">
             <h5>Un problème mécanique ? </h5>
             <div class="content">
-                <p>Réparation de tous types de vélo</p>
+                <p class="--bigCard">Réparation de tous types de vélo</p>
                 <p>Réparation "minute" pour les voyageurs</p>
                 <p>Recharge gratuite de batterie</p>
                 <p>Montage à la carte</p>
@@ -146,13 +147,13 @@
         <div class="container">
             <h5>Des vélos adaptés à votre usage</h5>
             <div class="content">
-                <p>Vélo familial</p>
-                <p>Sportif</p>
-                <p>Boulot, vélo, Dodo</p>
-                <p>Vélos de voyages</p>
+                <p class="--bigCard">Vélo familial</p>
+                <p class="--bigCard">Sportif</p>
+                <p class="--bigCard">Boulot, vélo, Dodo</p>
+                <p class="--bigCard">Vélos de voyages</p>
                 <p>Accessoires</p>
                 <p>Nos marques</p>
-               
+
             </div>
         </div>
 
@@ -170,11 +171,11 @@
         <div class="container">
             <h5>Notre terrasse en bord de Saône vous propose: </h5>
             <div class="content">
-                <p>Bières de brasseries locales</p>
-                <p>Glaces Terradélice</p>
-                <p>Planches pour toutes les envies</p>
-                <p>Les burritos végétariens</p>
-                <p>Boissons froides et chaudes</p>
+                <p class="--bigCard">Bières de brasseries locales</p>
+                <p class="--bigCard">Glaces Terradélice</p>
+                <p class="--bigCard">Planches pour toutes les envies</p>
+                <p class="--bigCard">Les burritos végétariens</p>
+                <p class="--bigCard">Boissons froides et chaudes</p>
                 <p>Wifi gratuit</p>
                 <p>Photos de notre terrasse</p>
             </div>
@@ -191,16 +192,17 @@
         <div class="sideBar">
             <h4>Evènenements</h4>
         </div>
-        <div class="container">
+        <div class="container" id="element-to-print">
             <h5>Les évènements du mois de <% if (data[0] !==undefined) { %>
                     <%= data[0].month %>
                         <% } else { %>
                             ...
                             <% } %>
             </h5>
+            <button id="getPDF" onclick="getPDF()">Download PDF</button>
             <div class="events__content">
                 <% for (const event of data) { %>
-                    <div class="event__card">
+                    <div class="event__card" class="page-break">
                         <img class="event__logo" src="/images/logo/<%= event.logo %>.png" alt="logo <%= event.logo%>">
                         <div class="event__day">
                             <%= event.day %>
@@ -225,7 +227,7 @@
 
 
     <section id="leavingPage">
-        <img src="/images/leaving.jpg" alt="" class="backgroundPicture">
+        <!-- <img src="/images/forever.jpg" alt="" class="backgroundPicture"> -->
         <div class="sideBar">
             <h4>Envie de partir</h4>
         </div>
@@ -250,6 +252,9 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.4/jspdf.plugin.autotable.min.js"></script>
     <script src="js/laRoueLibre.js"></script>
 
 </body>

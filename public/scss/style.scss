@@ -38,6 +38,7 @@ body {
         width: 1rem;
     }
     ::-webkit-scrollbar-track {
+        display:none;
         background: $backgroundColorBlack;
         height: 80%;
         border-radius: 2rem;
@@ -62,6 +63,7 @@ section {
 }
 
 .backHome {
+    display:none;
     background-color: $backgroundColorBlack;
     color: white;
     text-align: center;
