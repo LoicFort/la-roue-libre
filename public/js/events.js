@@ -9,25 +9,27 @@
 
 // document.querySelector('.publish').addEventListener('click', (e) => {
 
-//     let values = [];
-//     document.querySelectorAll('.event-card').forEach(div => {
-//       let obj = {
-//         year: div.querySelector('[name=year]').value,
-//         day: div.querySelector('[name=day]').value,
-//         title: div.querySelector('[name=title]').value,
-//         description: div.querySelector('[name=description]').value,
-//       }
-//       values.push(obj);
-//       console.log(obj);
+    // e.preventDefault();
+
+    // let values = [];
+    // document.querySelectorAll('.event-card').forEach(div => {
+    //   let obj = {
+    //     year: div.querySelector('[name=year]').value,
+    //     day: div.querySelector('[name=day]').value,
+    //     title: div.querySelector('[name=title]').value,
+    //     description: div.querySelector('[name=description]').value,
+    //   }
+    //   values.push(obj);
+    //   console.log(obj);
       
-//     })
+    // })
   
-//   })
 
 
-const deleteBtn = document.getElementsByClassName('.deleteButton');
 
-deleteBtn.addEventListener('click', (e) => {
-    console.log('click')
+// const deleteBtn = document.getElementsByClassName('.deleteButton');
+
+// deleteBtn.addEventListener('click', (e) => {
+//     console.log('click')
     
-})
+// })

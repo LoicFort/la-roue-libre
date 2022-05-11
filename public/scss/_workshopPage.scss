@@ -8,7 +8,7 @@
 #leavingPage,
 #eventsPage {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     display: flex;
     flex-wrap: wrap;
@@ -42,6 +42,7 @@
     }
 
     .backgroundPicture {
+        background-size: cover;
         width: 100vw;
         position: absolute;
         overflow: hidden;
@@ -53,7 +54,7 @@
 
 .sideBar {
     width: 12vw;
-    height: 100vh;
+    min-height: 100vh;
     background-color: $backgroundColorWhite;
     display: flex;
     justify-content: center;
@@ -62,6 +63,22 @@
     h4 {
         font-size: 1.2rem;
     }
+}
+
+.comingEventsContainer {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 20px;
+    color: black;
+    text-shadow: 0 0 black;
+
+}
+
+.comingEvents {
+    display: flex;
+    justify-content: space-between
 }
 
 .container {
@@ -76,7 +93,11 @@
         color: white;
         text-align: center;
         margin-top: 1rem;
-        font-size: 2rem;
+        font-size: 2rem;        
+        display: flex;
+        justify-content: space-evenly;
+
+        
     }
 }
 
@@ -153,7 +174,7 @@
 
 // style events
 
-#eventsPage, .data-render {
+#eventsPage, #mainPage, .data-render {
 
     .events__content {
         display: flex;
@@ -198,7 +219,7 @@
         }
 
         .event__logo {
-            width: 75%;
+            width: 70%;
             // height: 100%;
             padding: 0.2rem;
             overflow: hidden;
@@ -226,3 +247,18 @@
         }
     }
 }
+
+
+#eventsPage .event__card.--hidden {
+    display: none; 
+}
+
+// slider 
+
+.arrowRight {
+    cursor: pointer;
+}
+
+
+
+

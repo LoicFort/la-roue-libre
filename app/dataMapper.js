@@ -15,17 +15,29 @@ const dataMapper = {
 
     },
 
-    getMonthEvents: (callback) => {
-        const today = new Date();
-        const todayString = today.toLocaleString('fr-FR', { month: 'long' });
-        // console.log(todayString)
+    getMonthAndNextMonth: (actualMonth, nextMonth, callback) => {
+        // console.log(actualMonth, nextMonth)
+       
+        const query = {
+            text: `SELECT * FROM "events" WHERE "month" in ($1, $2)`,
+            values: [actualMonth, nextMonth]
+        }
+        // console.log(query)
+        database.query(query, callback);
+        
+    },
+
+    updateData: (monthString, callback) => {
+        
+
         const query = {
             text: `SELECT * FROM "events" WHERE "month" = $1 ORDER BY "day"`,
-            values: [todayString]
+            values: [monthString]
         }
-
         database.query(query, callback);
-        // console.log('getmonthevents')
+
+
+
     },
 
     createEvents: (data, callback) => {
@@ -50,6 +62,16 @@ const dataMapper = {
 
         }
         
+        database.query(query, callback);
+
+    },
+
+    deleteEvent: (data, callback) => {
+        const query = {
+            text: `DELETE FROM "events" WHERE "id" = $1`,
+            values: [data]
+
+        }
         database.query(query, callback);
 
     }

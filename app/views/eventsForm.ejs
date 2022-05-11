@@ -99,7 +99,9 @@
                             <div class="event__description">
                                 <%= event.description %>
                             </div>
-                            <div class="deleteButton">X</div>
+                            <a data-confirm="Are you sure?" data-method="delete" href="/deleteEvent/<%= event.id %>" rel="nofollow">
+                                <div class="deleteButton">X</div>
+                            </a>
                         </div>
 
 

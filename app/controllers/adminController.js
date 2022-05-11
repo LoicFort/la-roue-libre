@@ -37,7 +37,9 @@ const adminController = {
         dataMapper.createEvents( data, (err, results) => { 
             if(err) {
                 console.debug(err)
-            }
+            } 
+
+            res.render('eventsForm')
                             
             
         });
@@ -68,11 +70,20 @@ const adminController = {
 
     },
 
-    deleteOneEvent: (req, res)  => {
-        console.log('delete')
-
-
-
+    deleteOneEvent:  (req, res)  => {
+        try {
+            console.log('delete')
+            const eventId = req.params.id;
+            console.log(eventId)
+            dataMapper.deleteEvent(eventId, (err, results) => {                
+                res.render('eventsForm')
+                
+            })
+        } catch(error) {
+            console.trace(error);
+            res.status(500).json(error.toString())
+        }
+        
     }
 
 };
