@@ -112,12 +112,14 @@
                     <h3 class="presentation__title">Le café-vélo des voyageurs</h3>
                     <h3 class="presentation__subtitle">au quotidien et au long cours</h3>
                     <div class="comingEventsContainer">
-                        <h4>les prochains évènements de <%= actualMonthString %></h4>
+                        <h4>les prochains évènements de <%= actualMonthString %>
+                        </h4>
                         <div class="comingEvents">
 
                             <% for (let i=0; i < 3; i++) { %>
                                 <div class="event__card <%= dataMonth[i].id %> " class="page-break">
-                                    <img class="event__logo" src="/images/logo/<%= dataMonth[i].logo %>.png" alt="logo <%= dataMonth[i].logo %>">
+                                    <img class="event__logo" src="/images/logo/<%= dataMonth[i].logo %>.png"
+                                        alt="logo <%= dataMonth[i].logo %>">
                                     <div class="event__day">
                                         <%= dataMonth[i].day %>
                                     </div>
@@ -129,7 +131,7 @@
                                     </div>
                                 </div>
                                 <% } %>
-                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -196,7 +198,7 @@
             <h4>Le café</h4>
         </div>
         <div class="container">
-            <h5>Notre terrasse en bord de Saône vous propose: </h5>
+            <h5>Notre terrasse en bord de Saône vous propose </h5>
             <div class="content">
                 <p class="--bigCard">Bières de brasseries locales</p>
                 <p class="--bigCard">Glaces Terradélice</p>
@@ -221,18 +223,19 @@
         </div>
         <div class="container slider" id="element-to-print">
             <h5>
-                
+
                 <div> Les évènements du mois de
                     <span class="monthDisplayed">
                         <%= actualMonthString %>
                     </span>
-                    <span class="monthDisplayed --hidden">
+                    <span class="monthDisplayed --hidden" id="skip">
                         <%= nextMonthString %>
                     </span>
                 </div>
-                <div class="arrowRight">&#8611;</div>
+                <div id="skip" class="arrowRight">&#8611;</div>
             </h5>
-            <button id="getPDF" onclick="getPDF()">Download PDF</button>
+            <!-- custom button - print html to pdf with css styles-->
+           
             <div class="events__content">
                 <% for (const event of dataMonth) { %>
                     <div class="event__card <%=event.month%> " class="page-break">
@@ -249,7 +252,7 @@
                     </div>
                     <% } %>
                         <% for (const event of dataNextMonth) { %>
-                            <div class="event__card <%=event.month%> --hidden " class="page-break">
+                            <div class="event__card <%=event.month%> --hidden " id="skip">
                                 <img class="event__logo" src="/images/logo/<%= event.logo %>.png"
                                     alt="logo <%= event.logo%>">
                                 <div class="event__day">
@@ -263,6 +266,14 @@
                                 </div>
                             </div>
                             <% } %>
+                            <button class="evenstDownloadButton" id="skip" type="button" onclick="printJS({
+                                printable: 'element-to-print',
+                                type: 'html',
+                                maxWidth: 2000,                                 
+                                css: '/css/eventToPdf.css',
+                                ignoreElements: ['skip']
+                                })">Télécharger
+                           </button>
 
 
             </div>
@@ -301,9 +312,10 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.4/jspdf.plugin.autotable.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    <script src="  https://printjs-4de6.kxcdn.com/print.min.js    "></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.4/jspdf.plugin.autotable.min.js"></script> -->
     <script src="js/laRoueLibre.js"></script>
 
 </body>

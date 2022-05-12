@@ -203,6 +203,10 @@ nav {
         padding: 1rem;
         background-color: $backgroundColorBlack;
         color: white;
+        border-radius: 1rem;
+
+       
+
     }
 }
 
@@ -271,6 +275,7 @@ nav {
         width: fit-content;
         height: 25px;
         background-color: $backgroundColorWhite;
+        border-radius: 5px;
         color: black;
         cursor: pointer;
         padding:0.1rem;
@@ -278,17 +283,22 @@ nav {
 }
 
 .showInfo {
-    width: 35vw;
+    // width: 35vw;
     background-color: $backgroundColorBlack;
     border-radius: 0.5rem;
     color: white;    
     flex-direction: column;
     justify-content: space-around;
     transition: 1s ease;
-    position: relative;
+    position: absolute;
+    top: 2rem;
+    left: 8rem;
+    bottom: 2rem;
+    z-index: 9999;
     overflow: visible;
     margin-left: 3rem;
     padding: 1rem;
+    
     
     
 

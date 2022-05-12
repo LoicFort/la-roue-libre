@@ -27,8 +27,11 @@ const mainController = {
             });
 
 
-            // console.log(dataNextMonth)
+            let dataJson = JSON.stringify(data)
+            dataJson = dataJson.replace(/"(\w+)"\s*:/g, '$1:');
+            // console.log(dataJson)
             res.render('laRoueLibre', {
+                dataJson,
                 dataMonth,
                 dataNextMonth,
                 actualMonthString,

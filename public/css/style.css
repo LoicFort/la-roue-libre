@@ -194,7 +194,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   position: absolute;
-  right: 20px;
+  right: 9rem;
   color: black;
   text-shadow: 0 0 black;
 }
@@ -228,6 +228,19 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-transform: translate(-100%);
+          transform: translate(-100%);
+  opacity: 0;
+  -webkit-transition: opacity 0.9s ease-out, -webkit-transform 0.9s ease-in-out;
+  transition: opacity 0.9s ease-out, -webkit-transform 0.9s ease-in-out;
+  transition: transform 0.9s ease-in-out, opacity 0.9s ease-out;
+  transition: transform 0.9s ease-in-out, opacity 0.9s ease-out, -webkit-transform 0.9s ease-in-out;
+}
+
+.container h5.active {
+  -webkit-transform: translate(0%);
+          transform: translate(0%);
+  opacity: 1;
 }
 
 .content {
@@ -275,6 +288,7 @@
   border-radius: 1rem;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  background-clip: content-box;
 }
 
 #leavingPage .cardsContainer .card:hover {
@@ -299,6 +313,7 @@
   background-image: url("/images/weekend.jpg");
   background-size: cover;
   background-position: center;
+  border: 0 solid transparent;
 }
 
 .oneWeek {
@@ -313,7 +328,9 @@
   background-position: center;
 }
 
-#eventsPage .events__content, #mainPage .events__content, .data-render .events__content {
+#eventsPage .events__content,
+#mainPage .events__content,
+.data-render .events__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -323,15 +340,21 @@
       justify-content: space-around;
 }
 
-#eventsPage .container ::-webkit-scrollbar, #mainPage .container ::-webkit-scrollbar, .data-render .container ::-webkit-scrollbar {
+#eventsPage .container ::-webkit-scrollbar,
+#mainPage .container ::-webkit-scrollbar,
+.data-render .container ::-webkit-scrollbar {
   width: 3rem;
 }
 
-#eventsPage .container ::-webkit-scrollbar-track, #mainPage .container ::-webkit-scrollbar-track, .data-render .container ::-webkit-scrollbar-track {
+#eventsPage .container ::-webkit-scrollbar-track,
+#mainPage .container ::-webkit-scrollbar-track,
+.data-render .container ::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.808);
 }
 
-#eventsPage .event__card, #mainPage .event__card, .data-render .event__card {
+#eventsPage .event__card,
+#mainPage .event__card,
+.data-render .event__card {
   background-color: rgba(255, 255, 255, 0.705);
   width: 180px;
   height: 180px;
@@ -350,27 +373,35 @@
   gap: 0.1rem 0.1rem;
 }
 
-#eventsPage .event__card .event__day, #mainPage .event__card .event__day, .data-render .event__card .event__day {
+#eventsPage .event__card .event__day,
+#mainPage .event__card .event__day,
+.data-render .event__card .event__day {
   font-size: 2rem;
   overflow: hidden;
   text-align: center;
 }
 
-#eventsPage .event__card .event__logo, #mainPage .event__card .event__logo, .data-render .event__card .event__logo {
+#eventsPage .event__card .event__logo,
+#mainPage .event__card .event__logo,
+.data-render .event__card .event__logo {
   width: 70%;
   padding: 0.2rem;
   overflow: hidden;
 }
 
 #eventsPage .event__card .event__title,
-#eventsPage .event__card .event__description, #mainPage .event__card .event__title,
-#mainPage .event__card .event__description, .data-render .event__card .event__title,
+#eventsPage .event__card .event__description,
+#mainPage .event__card .event__title,
+#mainPage .event__card .event__description,
+.data-render .event__card .event__title,
 .data-render .event__card .event__description {
   font-size: 0.8rem;
   overflow: hidden;
 }
 
-#eventsPage .event__card .event__title, #mainPage .event__card .event__title, .data-render .event__card .event__title {
+#eventsPage .event__card .event__title,
+#mainPage .event__card .event__title,
+.data-render .event__card .event__title {
   background-color: rgba(0, 0, 0, 0.808);
   color: aquamarine;
   -ms-grid-row: 2;
@@ -378,9 +409,20 @@
   -ms-grid-column-span: 2;
   grid-area: event__title;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-#eventsPage .event__card .event__description, #mainPage .event__card .event__description, .data-render .event__card .event__description {
+#eventsPage .event__card .event__description,
+#mainPage .event__card .event__description,
+.data-render .event__card .event__description {
   font-style: italic;
   padding: 0.2rem;
   -ms-grid-row: 3;
@@ -393,8 +435,30 @@
   display: none;
 }
 
+.slider {
+  position: relative;
+}
+
 .arrowRight {
   cursor: pointer;
+}
+
+.evenstDownloadButton {
+  position: absolute;
+  bottom: 1%;
+  right: 50%;
+  background-color: rgba(0, 0, 0, 0.808);
+  color: aquamarine;
+  padding: 0.2rem 0.6rem;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.evenstDownloadButton:active {
+  -webkit-transform: scale(98%);
+          transform: scale(98%);
+  color: #00ffaa;
 }
 
 .adminEventsContainer {
@@ -664,6 +728,7 @@ nav ul li::after {
   padding: 1rem;
   background-color: rgba(0, 0, 0, 0.808);
   color: white;
+  border-radius: 1rem;
 }
 
 .socialMedia {
@@ -746,13 +811,13 @@ nav ul li::after {
   width: fit-content;
   height: 25px;
   background-color: rgba(255, 255, 255, 0.705);
+  border-radius: 5px;
   color: black;
   cursor: pointer;
   padding: 0.1rem;
 }
 
 .showInfo {
-  width: 35vw;
   background-color: rgba(0, 0, 0, 0.808);
   border-radius: 0.5rem;
   color: white;
@@ -764,7 +829,11 @@ nav ul li::after {
       justify-content: space-around;
   -webkit-transition: 1s ease;
   transition: 1s ease;
-  position: relative;
+  position: absolute;
+  top: 2rem;
+  left: 8rem;
+  bottom: 2rem;
+  z-index: 9999;
   overflow: visible;
   margin-left: 3rem;
   padding: 1rem;
