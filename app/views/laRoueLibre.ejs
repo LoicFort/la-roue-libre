@@ -12,247 +12,222 @@
 </head>
 
 <body>
+    <div class="wrapper">
+        <!-- 6 sections: 1 page d'accueil avec 1 header /navbar ... + 5 sections avec la même structure side bar + content -->
 
-    <!-- 6 sections: 1 page d'accueil avec 1 header /navbar ... + 5 sections avec la même structure side bar + content -->
-
-    <section id="mainPage">
-
-
-        <div class="backgroundImage">
-            <img class="backgroundPicture" src="/images/canyon.jpg" alt="vélo de randonnée devant grand canyon">
+        <section id="mainPage">
+            
             <header class="main">
-                <div class="title">
-                    <div class="title__logo"></div>
-                    <div class="title__content">
-                        <h1>La roue libre</h1>
-                        <h2>café-vélo Trévoux</h2>
-                    </div>
+                    <img class="backgroundPicture" src="/images/canyon.jpg" alt="vélo de randonnée devant grand canyon">
+                    <div class="title">
+                        <div class="title__logo"></div>
+                        <div class="title__content">
+                            <h1>La roue libre</h1>
+                            <h2>café-vélo Trévoux</h2>
+                        </div>
+                    
+                    <nav>
+                        <ul>
+                            <a href="#workshopPage">
+                                <li class="nav-link">Atelier</li>
+                            </a>
+                            <a href="#shopPage">
+                                <li class="nav-link">Magasin</li>
+                            </a>
+                            <a href="#coffeePage">
+                                <li class="nav-link">Café</li>
+                            </a>
+                            <a href="#eventsPage">
+                                <li class="nav-link">Evènements</li>
+                            </a>
+                            <a href="#leavingPage">
+                                <li class="nav-link --flexGrow">Envie de partir ?</li>
+                            </a>
+                        </ul>
+                    </nav>
                 </div>
-                <nav>
-                    <ul>
-                        <a href="#workshopPage">
-                            <li class="nav-link">Atelier</li>
-                        </a>
-                        <a href="#shopPage">
-                            <li class="nav-link">Magasin</li>
-                        </a>
-                        <a href="#coffeePage">
-                            <li class="nav-link">Café</li>
-                        </a>
-                        <a href="#eventsPage">
-                            <li class="nav-link">Evènements</li>
-                        </a>
-                        <a href="#leavingPage">
-                            <li class="nav-link --flexGrow">Envie de partir ?</li>
-                        </a>
-                    </ul>
-                </nav>
-            </header>
-
-            <div class="mainPageContainer">
-
-
-                <div class="socialMediaContainer">
-                    <div class="socialMedia --facebook">
-                        <a href="https://www.facebook.com/La-Roue-Libre-Tr%C3%A9voux-103595691886177" target="_blank">
-                            <img src="images/facebook.png" alt="lien vers le site de la roue libre trevoux">
-                        </a>
-                    </div>
-                    <div class="socialMedia --instagram">
-                        <a href="https://www.instagram.com/larouelibretrevoux/?hl=fr" target="_blank">
-                            <img src="/images/insta.png" alt="lien vers instagram la roue libre trevoux">
-                        </a>
-                    </div>
-                    <div class="socialMedia --tweeter">
-                        <a href="https://twitter.com/larouelibretrvx" target="_blank">
-                            <img src="/images/twitter.png" alt="lien vers twitter la roue libre trevoux">
-                        </a>
-
-                    </div>
-                    <div class="socialMedia --mail">
-                        <span title="contact@larouelibretrevoux.fr">
-
+                    
+                    <div class="mainPageContainer">
+                        <div class="socialMediaContainer">
+                            <div class="socialMedia --facebook">
+                                <a href="https://www.facebook.com/La-Roue-Libre-Tr%C3%A9voux-103595691886177"
+                                target="_blank">
+                                <img src="images/facebook.png" alt="lien vers le site de la roue libre trevoux">
+                            </a>
+                            <p class="--hidden">Cliquez sur les icones pour être redirigé</p>
+                            
+                        </div>
+                        <div class="socialMedia --instagram">
+                            <a href="https://www.instagram.com/larouelibretrevoux/?hl=fr" target="_blank">
+                                <img src="/images/insta.png" alt="lien vers instagram la roue libre trevoux">
+                            </a>
+                            <p class="--hidden">heures d'ouverture: 09h- 19h</p>
+                            
+                        </div>
+                        <div class="socialMedia --tweeter">
+                            <a href="https://twitter.com/larouelibretrvx" target="_blank">
+                                <img src="/images/twitter.png" alt="lien vers twitter la roue libre trevoux">
+                            </a>
+                            <p class="--hidden">contact@larouelibretrevoux.fr</p>
+                            
+                        </div>
+                        <div class="socialMedia --mail">
                             <a href="mailto:contact@larouelibretrevoux.fr" target="_blank">
                                 <img src="/images/mail.png" alt="lien vers gmail la roue libre trevoux">
                                 <!-- <a href="https://www.flaticon.com/free-icons/contact" title="contact icons">Contact icons created by Freepik - Flaticon</a> -->
                             </a>
-                        </span>
-                    </div>
-                    <div class="socialMedia --phone">
-                        <img src="/images/phone.png" alt="">
-                        <!-- <p>Le café 06 51 09 56 88</p>
-                                    <p>L'atelier 06 82 19 45 24</p> -->
-                    </div>
-                    <div class="socialMedia --maps">
-                        <a href="https://www.google.fr/maps/place/La+Roue+Libre+Caf%C3%A9-v%C3%A9lo+Tr%C3%A9voux/@45.9330815,4.7819246,17z/data=!3m1!4b1!4m5!3m4!1s0x47f4919aa91c5f8f:0xf893837326e36469!8m2!3d45.9329594!4d4.7841937"
+                            <p class=" shopPhone --hidden">L'atelier <span class="number">06 82 19 45 24</span></p>
+                            
+                            
+                        </div>
+                        <div class="socialMedia --phone">
+                            <img src="/images/phone.png" alt="">
+                            <p class="coffeePhone --hidden">Le café <span class="number">06 51 09 56 88</span></p>
+
+                        </div>
+                        <div class="socialMedia --maps">
+                            <a href="https://www.google.fr/maps/place/La+Roue+Libre+Caf%C3%A9-v%C3%A9lo+Tr%C3%A9voux/@45.9330815,4.7819246,17z/data=!3m1!4b1!4m5!3m4!1s0x47f4919aa91c5f8f:0xf893837326e36469!8m2!3d45.9329594!4d4.7841937"
                             target="_blanck">
                             <img src="/images/maps.png" alt="lien vers gmail la roue libre trevoux">
                             <!-- <p>Chem. de la Croix Marinier</br> 01600 Trévoux</p> -->
-                        </a>
+                            </a>
+                            <p class="--hidden">Chem. de la Croix Marinier 01600 Trévoux</p>
+                        </div>
+                        
                     </div>
-
-                </div>
-
-
-                <div class="showInfo --hidden">
-                    <p>Cliquez sur les icones pour être redirigé</p>
-                    <p>heures d'ouverture: 09h- 19h</p>
-
-                    <p>https://www.instagram.com/larouelibretrevoux/</p>
-                    <p>https://twitter.com/larouelibretrvx</p>
-                    <p>contact@larouelibretrevoux.fr</p>
-                    <p>Le café 06 51 09 56 88</p>
-                    <p>L'atelier 06 82 19 45 24</p>
-                    <p>Chem. de la Croix Marinier 01600 Trévoux</p>
-
-                </div>
-
-
-                <div class="presentation">
-                    <h3 class="presentation__title">Le café-vélo des voyageurs</h3>
-                    <h3 class="presentation__subtitle">au quotidien et au long cours</h3>
-                    <div class="comingEventsContainer">
-                        <h4>les prochains évènements de <%= actualMonthString %>
-                        </h4>
-                        <div class="comingEvents">
-
-                            <% for (let i=0; i < 3; i++) { %>
-                                <div class="event__card <%= dataMonth[i].id %> " class="page-break">
-                                    <img class="event__logo" src="/images/logo/<%= dataMonth[i].logo %>.png"
-                                        alt="logo <%= dataMonth[i].logo %>">
-                                    <div class="event__day">
-                                        <%= dataMonth[i].day %>
+                    <div class="presentation">
+                        <h3 class="presentation__title">Le café-vélo des voyageurs</h3>
+                        <h3 class="presentation__subtitle">au quotidien et au long cours</h3>
+                        <div class="comingEventsContainer">
+                            <h4>les prochains évènements de <%= actualMonthString %>
+                            </h4>
+                            <div class="comingEvents">
+                                
+                                <% for (let i=0; (i < 3 && i < dataMonth.length); i++) { %>
+                                    <div class="event__card <%= dataMonth[i].id %> " class="page-break">
+                                        <img class="event__logo" src="/images/logo/<%= dataMonth[i].logo %>.png"
+                                            alt="logo <%= dataMonth[i].logo %>">
+                                        <div class="event__day">
+                                            <%=dataMonth[i].day %>
+                                        </div>
+                                        <div class="event__title">
+                                            <%= dataMonth[i].title %>
+                                        </div>
+                                        <div class="event__description">
+                                            <%= dataMonth[i].description %>
+                                        </div>
                                     </div>
-                                    <div class="event__title">
-                                        <%= dataMonth[i].title %>
-                                    </div>
-                                    <div class="event__description">
-                                        <%= dataMonth[i].description %>
-                                    </div>
+                                    <% } %>
                                 </div>
-                                <% } %>
                         </div>
                     </div>
                 </div>
+
+                
+            </header>
+                
+        </section>
+
+        <!-- workshop -->
+
+        <section id="workshopPage">
+            <a href="#mainPage">
+                <div class="backHome">Retour accueil</div>
+            </a>
+            <img src="/images/atelier.jpeg" alt="" class="backgroundPicture">
+            <div class="sideBar">
+                <h4>L'atelier</h4>
             </div>
-
-        </div>
-
-    </section>
-
-    <!-- workshop -->
-
-    <section id="workshopPage">
-        <a href="#mainPage">
-            <div class="backHome">Retour accueil</div>
-        </a>
-        <img src="/images/atelier.jpeg" alt="" class="backgroundPicture">
-        <div class="sideBar">
-            <h4>L'atelier</h4>
-        </div>
-        <div class="container">
-            <h5>Un problème mécanique ? </h5>
-            <div class="content">
-                <p class="--bigCard">Réparation de tous types de vélo</p>
-                <p>Réparation "minute" pour les voyageurs</p>
-                <p>Recharge gratuite de batterie</p>
-                <p>Montage à la carte</p>
-                <p>Pompe libre service</p>
-                <p>Peinture de votre cadre préféré</p>
-                <p>Marquage bicicode</p>
-            </div>
-        </div>
-
-
-    </section>
-
-    <!-- shop -->
-
-    <section id="shopPage">
-        <img src="/images/magasin.jpg" alt="" class="backgroundPicture">
-        <div class="sideBar">
-            <h4>Le magasin</h4>
-        </div>
-        <div class="container">
-            <h5>Des vélos adaptés à votre usage</h5>
-            <div class="content">
-                <p class="--bigCard">Vélo familial</p>
-                <p class="--bigCard">Sportif</p>
-                <p class="--bigCard">Boulot, vélo, Dodo</p>
-                <p class="--bigCard">Vélos de voyages</p>
-                <p>Accessoires</p>
-                <p>Nos marques</p>
-
-            </div>
-        </div>
-
-
-    </section>
-
-
-    <!-- coffee -->
-
-    <section id="coffeePage">
-        <img src="/images/café.jpg" alt="" class="backgroundPicture">
-        <div class="sideBar">
-            <h4>Le café</h4>
-        </div>
-        <div class="container">
-            <h5>Notre terrasse en bord de Saône vous propose </h5>
-            <div class="content">
-                <p class="--bigCard">Bières de brasseries locales</p>
-                <p class="--bigCard">Glaces Terradélice</p>
-                <p class="--bigCard">Planches pour toutes les envies</p>
-                <p class="--bigCard">Les burritos végétariens</p>
-                <p class="--bigCard">Boissons froides et chaudes</p>
-                <p>Wifi gratuit</p>
-                <p>Photos de notre terrasse</p>
-            </div>
-        </div>
-
-
-    </section>
-
-
-    <!-- events -->
-
-    <section id="eventsPage">
-        <img src="/images/évènements.jpg" alt="vu sur la saone couché de soleil ciel rose" class="backgroundPicture">
-        <div class="sideBar">
-            <h4>Evènenements</h4>
-        </div>
-        <div class="container slider" id="element-to-print">
-            <h5>
-
-                <div> Les évènements du mois de
-                    <span class="monthDisplayed">
-                        <%= actualMonthString %>
-                    </span>
-                    <span class="monthDisplayed --hidden" id="skip">
-                        <%= nextMonthString %>
-                    </span>
+            <div class="container">
+                <h5>Un problème mécanique ? </h5>
+                <div class="content">
+                    <p class="card --bigCard">Réparation de tous types de vélo</p>
+                    <p class="card">Réparation "minute" pour les voyageurs</p>
+                    <p class="card">Recharge gratuite de batterie</p>
+                    <p class="card">Montage à la carte</p>
+                    <p class="card">Pompe libre service</p>
+                    <p class="card">Peinture de votre cadre préféré</p>
+                    <p class="card">Marquage bicicode</p>
                 </div>
-                <div id="skip" class="arrowRight">&#8611;</div>
-            </h5>
-            <!-- custom button - print html to pdf with css styles-->
-           
-            <div class="events__content">
-                <% for (const event of dataMonth) { %>
-                    <div class="event__card <%=event.month%> " class="page-break">
-                        <img class="event__logo" src="/images/logo/<%= event.logo %>.png" alt="logo <%= event.logo%>">
-                        <div class="event__day">
-                            <%= event.day %>
-                        </div>
-                        <div class="event__title">
-                            <%= event.title %>
-                        </div>
-                        <div class="event__description">
-                            <%= event.description %>
-                        </div>
+            </div>
+
+
+        </section>
+
+        <!-- shop -->
+
+        <section id="shopPage">
+            <img src="/images/magasin.jpg" alt="" class="backgroundPicture">
+            <div class="sideBar">
+                <h4>Magasin</h4>
+            </div>
+            <div class="container">
+                <h5>Des vélos adaptés à votre usage</h5>
+                <div class="content">
+                    <p class="card --bigCard">Vélo familial</p>
+                    <p class="card --bigCard">Sportif</p>
+                    <p class="card --bigCard">Boulot, vélo, Dodo</p>
+                    <p class="card --bigCard">Vélos de voyages</p>
+                    <p class="card">Accessoires</p>
+                    <p class="card">Nos marques</p>
+
+                </div>
+            </div>
+
+
+        </section>
+
+
+        <!-- coffee -->
+
+        <section id="coffeePage">
+            <img src="/images/café.jpg" alt="" class="backgroundPicture">
+            <div class="sideBar">
+                <h4>Café</h4>
+            </div>
+            <div class="container">
+                <h5>Notre terrasse en bord de Saône vous propose </h5>
+                <div class="content">
+                    <p class="card --bigCard">Bières de brasseries locales</p>
+                    <p class="card --bigCard">Glaces Terradélice</p>
+                    <p class="card --bigCard">Planches pour toutes les envies</p>
+                    <p class="card --bigCard">Les burritos végétariens</p>
+                    <p class="card --bigCard">Boissons froides et chaudes</p>
+                    <p class="card">Wifi gratuit</p>
+                    <p class="card">Photos de notre terrasse</p>
+                </div>
+            </div>
+
+
+        </section>
+
+
+        <!-- events -->
+
+        <section id="eventsPage">
+            <img src="/images/évènements.jpg" alt="vu sur la saone couché de soleil ciel rose"
+                class="backgroundPicture">
+            <div class="sideBar">
+                <h4>Evènenements</h4>
+            </div>
+            <div class="container slider" id="element-to-print">
+                <h5>
+
+                    <div> Les évènements du mois de
+                        <span class="monthDisplayed">
+                            <%= actualMonthString %>
+                        </span>
+                        <span class="monthDisplayed --hidden" id="skip">
+                            <%= nextMonthString %>
+                        </span>
                     </div>
-                    <% } %>
-                        <% for (const event of dataNextMonth) { %>
-                            <div class="event__card <%=event.month%> --hidden " id="skip">
+                    <div id="skip" class="arrowRight">&#8611;</div>
+                </h5>
+                <!-- custom button - print html to pdf with css styles-->
+                <div class="EvtBtnContainer">
+                    <div class="events__content">
+                        <% for (const event of dataMonth) { %>
+                            <div class="event__card <%=event.month%> " class="page-break">
                                 <img class="event__logo" src="/images/logo/<%= event.logo %>.png"
                                     alt="logo <%= event.logo%>">
                                 <div class="event__day">
@@ -266,58 +241,75 @@
                                 </div>
                             </div>
                             <% } %>
-                            <button class="evenstDownloadButton" id="skip" type="button" onclick="printJS({
-                                printable: 'element-to-print',
-                                type: 'html',
-                                maxWidth: 2000,                                 
-                                css: '/css/eventToPdf.css',
-                                ignoreElements: ['skip']
-                                })">Télécharger
-                           </button>
+                                <% for (const event of dataNextMonth) { %>
+                                    <div class="event__card <%=event.month%> --hidden " id="skip">
+                                        <img class="event__logo" src="/images/logo/<%= event.logo %>.png"
+                                            alt="logo <%= event.logo%>">
+                                        <div class="event__day">
+                                            <%= event.day %>
+                                        </div>
+                                        <div class="event__title">
+                                            <%= event.title %>
+                                        </div>
+                                        <div class="event__description">
+                                            <%= event.description %>
+                                        </div>
+                                    </div>
+                                    <% } %>
+                    </div>
 
+                    <button class="eventsDownloadButton" id="skip" type="button" onclick="printJS({
+                printable: 'element-to-print',
+                type: 'html',
+                maxWidth: 2000,                                 
+                css: '/css/eventToPdf.css',
+                ignoreElements: ['skip']
+                })">Télécharger
+                    </button>
+                </div>
 
             </div>
-        </div>
 
 
-    </section>
+        </section>
 
 
-    <!-- leaving -->
+        <!-- leaving -->
 
 
-    <section id="leavingPage">
-        <!-- <img src="/images/forever.jpg" alt="" class="backgroundPicture"> -->
-        <div class="sideBar">
-            <h4>Envie de partir</h4>
-        </div>
-        <div class="cardsContainer">
-            <div class="card oneDay">
-                <h5>une journée</h5>
+        <section id="leavingPage">
+            <!-- <img src="/images/forever.jpg" alt="" class="backgroundPicture"> -->
+            <div class="sideBar">
+                <h4>Envie de partir</h4>
             </div>
-            <div class="card weekend">
-                <h5>un weekend</h5>
+            <div class="cardsContainer">
+                <div class="leavingCard oneDay">
+                    <h5>une journée</h5>
+                </div>
+                <div class="leavingCard weekend">
+                    <h5>un weekend</h5>
+                </div>
+                <div class="leavingCard oneWeek">
+                    <h5>une semaine</h5>
+                </div>
+                <div class="leavingCard forever">
+                    <h5>pour la vie...</h5>
+                </div>
+
             </div>
-            <div class="card oneWeek">
-                <h5>une semaine</h5>
-            </div>
-            <div class="card forever">
-                <h5>pour la vie...</h5>
-            </div>
-
-        </div>
 
 
-    </section>
+        </section>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-    <script src="  https://printjs-4de6.kxcdn.com/print.min.js    "></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.4/jspdf.plugin.autotable.min.js"></script> -->
-    <script src="js/laRoueLibre.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="  https://printjs-4de6.kxcdn.com/print.min.js    "></script>
 
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.4/jspdf.plugin.autotable.min.js"></script> -->
+        <script src="js/laRoueLibre.js"></script>
+    </wrapper>
 </body>
 
 </html>

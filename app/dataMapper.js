@@ -15,15 +15,19 @@ const dataMapper = {
 
     },
 
-    getMonthAndNextMonth: (actualMonth, nextMonth, callback) => {
+    getMonthAndNextMonth: async (actualMonth, nextMonth, callback) => {
         // console.log(actualMonth, nextMonth)
        
         const query = {
             text: `SELECT * FROM "events" WHERE "month" in ($1, $2)`,
             values: [actualMonth, nextMonth]
         }
-        // console.log(query)
-        database.query(query, callback);
+        try {
+            return await database.query(query, callback);
+        } catch (error) {
+            console.error(error);
+        }
+       
         
     },
 
@@ -40,17 +44,16 @@ const dataMapper = {
 
     },
 
-    createEvents: (data, callback) => {
-
-
+    createEvents: (data, callback) => {       
         const query = {
             text: `INSERT INTO "events"("year", "month", "day", "logo", "title", "description") VALUES ($1, $2, $3, $4,$5, $6)`,
             values: [data.year, data.month, data.day, data.logo, data.title, data.description]
         }
-
-
-
-        database.query(query, callback);
+        try {
+            database.query(query, callback);
+        } catch(error) {
+            console.log(error)
+        }
 
     },
 

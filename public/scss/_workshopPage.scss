@@ -2,11 +2,7 @@
 
 @import "./vars";
 
-#workshopPage,
-#shopPage,
-#coffeePage,
-#leavingPage,
-#eventsPage {
+section:not(#mainPage) {
     position: relative;
     min-height: 100vh;
     width: 100vw;
@@ -14,8 +10,9 @@
     flex-wrap: wrap;
     overflow: hidden;
 
+
     // p = card / tuile avec infos pour chaque rubrique workshop, coffee...
-    p {
+    .card {
         background-color: $backgroundColorWhite;
         width: 10rem;
         height: 10rem;
@@ -38,7 +35,7 @@
     }
 
     .backgroundPicture {
-        background-size: cover;
+       
         width: 100vw;
         position: absolute;
         overflow: hidden;
@@ -62,23 +59,29 @@
 }
 
 .comingEventsContainer {
-    width: 60%;
+    width: fit-content;  
     display: flex;
     flex-direction: column;
     position: absolute;
-    right: 9rem;
+    bottom: 1rem;
     color: black;
     text-shadow: 0 0 black;
+    transition: opacity 0.9s ease;
+
+    h4 {
+        text-align: center;
+        font-size: 1.2rem;
+        padding: 1rem;
+        background-color: $backgroundColorBlack;
+        color: white;
+        border-radius: 1rem;
+    }
 }
 
-.comingEvents {
-    display: flex;
-    justify-content: space-between;
-}
 
 .container {
     width: 80vw;
-    margin: 3rem;
+    margin: 1rem auto;
     background-color: $backgroundColorWhite;
     border-radius: 2rem;
     overflow: hidden;
@@ -94,6 +97,7 @@
         transform: translate(-100%);
         opacity: 0;
         transition: transform 0.9s ease-in-out, opacity 0.9s ease-out;
+        padding: 0 1rem;
     }
 
     h5.active {
@@ -104,7 +108,7 @@
 
 .content {
     width: 100%;
-    height: 80%;
+    height: 91%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -126,13 +130,13 @@
         justify-content: space-around;
         align-items: center;
 
-        .card {
+        .leavingCard {
             width: 30vw;
             height: 40vh;
-            background-color: aqua;
+            overflow: hidden;            
             border-radius: 1rem;
             transition: 0.3s;
-            background-clip: content-box;
+            // background-clip: content-box;
 
             &:hover {
                 transform: scale(1.009);
@@ -182,17 +186,9 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
+        margin: 1rem auto;
     }
-    .container {
-        // overflow-y: scroll;
-        ::-webkit-scrollbar {
-            width: 3rem;
-        }
-        ::-webkit-scrollbar-track {
-            background: $backgroundColorBlack;
-        }
-    }
-
+    
     .event__card {
         background-color: $backgroundColorWhite;
         width: 180px;
@@ -214,6 +210,7 @@
             font-size: 2rem;
             overflow: hidden;
             text-align: center;
+            margin:auto;
         }
 
         .event__logo {
@@ -221,6 +218,7 @@
             // height: 100%;
             padding: 0.2rem;
             overflow: hidden;
+            filter: grayscale(1);
         }
 
         .event__title,
@@ -264,18 +262,20 @@
 
 // Button download events
 
-.evenstDownloadButton {
-    position: absolute;
-    bottom: 1%;
-    right: 50%;
+.eventsDownloadButton {
+    
     background-color: $backgroundColorBlack;
     color: aquamarine;
     padding: 0.2rem 0.6rem;
     border-radius: 1rem;
     border: none;
-    cursor: pointer
+    cursor: pointer;
+    position: absolute;
+    bottom: 1rem;
+    right: 50%;
+    transform: translateX(35%);
 }
 .evenstDownloadButton:active {
     transform: scale(98%);
-    color: rgb(0, 255, 170)
+    color: rgb(0, 255, 170);
 }

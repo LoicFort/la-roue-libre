@@ -1,11 +1,4 @@
-
-
-const setBaseURL = "http://localhost:4001";
-
 // on refresh / load go to the top of the page
-
-
-
 window.onload = function () {
 
   window / scrollTo(0, 0)
@@ -23,10 +16,9 @@ if (history.scrollRestoration) {
 // bacKHome opacity 1 on scroll --------------------------------------------------------------------
 const backHome = document.querySelector('.backHome');
 
-window.addEventListener('scroll', () => {
-  // window.scrollY = 0;
+window.addEventListener('scroll', () => { 
+  
   if (window.scrollY < 200) {
-
     backHome.style.display = "none";
   } else {
 
@@ -47,25 +39,21 @@ window.addEventListener('load', () => {
 // H5 animation -------------------------------------------------------------
 
 const titles = document.querySelectorAll('h5')
+const wrapper = document.querySelector('.wrapper');
 
 
-
-// console.table(h5FromTop)
-
-window.addEventListener('scroll', () => {
+wrapper.addEventListener('scroll', () => {
   const { scrollTop, clientHeight } = document.documentElement;
   let h5FromTop = [];
 
   for (let i = 0; i < titles.length; i++) {
-  h5FromTop.push(titles[i].getBoundingClientRect().top)   
-  
-}
+    h5FromTop.push(titles[i].getBoundingClientRect().top)
 
-  
-  for (let i=0; i < titles.length; i++) {
-    if(scrollTop > (scrollTop + h5FromTop[i]).toFixed() - clientHeight * 0.80) {
-      // console.log(('ok'))
-      titles[i].classList.add('active')
+  }
+
+  for (let i = 0; i < titles.length; i++) {
+    if (scrollTop > (scrollTop + h5FromTop[i]).toFixed() - clientHeight * 0.80) {
+            titles[i].classList.add('active')
     } else {
       titles[i].classList.remove('active')
 
@@ -73,50 +61,38 @@ window.addEventListener('scroll', () => {
 
   }
 
-  
- 
-
-
-
-
- 
-
 })
-
-
-
-
-
 
 // Deploy contact container (.gafa) to show more info--------------------------------------------------------
 
 const deployMoreInfo = document.querySelector('.socialMediaContainer', ":after");
-const closeInfo = document.querySelector('.showInfo', ":after");
-const infoContainer = document.querySelector('.showInfo');
+const socialMediaContainer = document.querySelector('.socialMediaContainer');
 const mainPageTitle = document.querySelector('.presentation');
+const comingEventsContainer = document.querySelector('.comingEventsContainer');
 
 
 
 deployMoreInfo.addEventListener('click', () => {
-  if (window.getComputedStyle(infoContainer).display === "none") {
-    infoContainer.style.display = "flex";
-    infoContainer.style.transition = "0.5s ease";
-
-    mainPageTitle.style.fontSize = "2rem"
-  } else {
-    infoContainer.style.display = "";
-    mainPageTitle.style.fontSize = "";
-  };
-
-  const titleAnimation = gsap.timeline({ paused: true });
-  titleAnimation.staggerFrom(infoContainer, 0.5, { opacity: 0, ease: "in-and-out" }, 1);
-  titleAnimation.play();
-
-
-
-
+  socialMediaContainer.style.width = socialMediaContainer.style.width === '' ? '80%' : '';
+  socialMediaContainer.style.transition = "0.8s ease";
+  document.querySelectorAll(".socialMedia > p").forEach((p) => {
+    p.classList.toggle('--hidden');    
+    p.style.width = "90%";   
+    p.style.textAlign = "center";
+  })
+  document.querySelectorAll(".socialMedia").forEach((div) => {
+    div.style.display="flex";
+  } )
+  // const containerAnimation = gsap.timeline({ paused: true });
+  // containerAnimation.staggerFrom(socialMediaContainer, 1, { width: "64px", ease: "in-and-out" });
+  // containerAnimation.play();
 
 });
+
+
+
+
+
 
 // Slider events------------------------------------------------------------------------------------------
 
@@ -155,5 +131,16 @@ rightButton.addEventListener('click', () => {
   }
 
 })
+
+document.querySelectorAll('.number').forEach((number) => {
+  number.addEventListener('click', () => {
+    let phoneNumber = number.textContent;
+    // phoneNumber.setSelectionRange(0,20);
+    navigator.clipboard.writeText(phoneNumber);  
+  alert("cliquer sur OK pour copier le numéro " + phoneNumber);    
+  })
+
+});
+
 
 
