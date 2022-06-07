@@ -12,9 +12,15 @@
 </head>
 
 <body>
+    <a href="#mainPage" class="backHome">
+        <div >Retour accueil</div>
+    </a> 
+    <a href="#mainPage"  class="backHomeMobile">
+        <div>Accueil</div>
+    </a>
     <div class="wrapper">
         <!-- 6 sections: 1 page d'accueil avec 1 header /navbar ... + 5 sections avec la même structure side bar + content -->
-
+       
         <section id="mainPage">
             
             <header class="main">
@@ -103,18 +109,18 @@
                             </h4>
                             <div class="comingEvents">
                                 
-                                <% for (let i=0; (i < 3 && i < dataMonth.length); i++) { %>
+                                <% for (let i=0; (i < 3 && i < NextMonthEvents.length); i++) { %>
                                     <div class="event__card <%= dataMonth[i].id %> " class="page-break">
-                                        <img class="event__logo" src="/images/logo/<%= dataMonth[i].logo %>.png"
-                                            alt="logo <%= dataMonth[i].logo %>">
+                                        <img class="event__logo" src="/images/logo/<%= NextMonthEvents[i].logo %>.png"
+                                            alt="logo <%= NextMonthEvents[i].logo %>">
                                         <div class="event__day">
-                                            <%=dataMonth[i].day %>
+                                            <%=NextMonthEvents[i].day %>
                                         </div>
                                         <div class="event__title">
-                                            <%= dataMonth[i].title %>
+                                            <%= NextMonthEvents[i].title %>
                                         </div>
                                         <div class="event__description">
-                                            <%= dataMonth[i].description %>
+                                            <%= NextMonthEvents[i].description %>
                                         </div>
                                     </div>
                                     <% } %>
@@ -131,9 +137,7 @@
         <!-- workshop -->
 
         <section id="workshopPage">
-            <a href="#mainPage">
-                <div class="backHome">Retour accueil</div>
-            </a>
+           
             <img src="/images/atelier.jpeg" alt="" class="backgroundPicture">
             <div class="sideBar">
                 <h4>L'atelier</h4>
@@ -280,7 +284,7 @@
         <section id="leavingPage">
             <!-- <img src="/images/forever.jpg" alt="" class="backgroundPicture"> -->
             <div class="sideBar">
-                <h4>Envie de partir</h4>
+                <h4>Partir...</h4>
             </div>
             <div class="cardsContainer">
                 <div class="leavingCard oneDay">

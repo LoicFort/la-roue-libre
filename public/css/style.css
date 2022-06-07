@@ -246,6 +246,7 @@ section:not(#mainPage) .backgroundPicture {
       justify-content: space-around;
   font-size: 1.5rem;
   overflow: hidden;
+  padding-bottom: 0.5rem;
 }
 
 #leavingPage {
@@ -519,7 +520,7 @@ header {
           transform-style: preserve-3d;
 }
 
-.backHome {
+.backHome, .backHomeMobile {
   display: none;
   background-color: rgba(0, 0, 0, 0.808);
   color: white;
@@ -530,6 +531,10 @@ header {
   width: 12vw;
   padding: 0.5rem;
   z-index: 10;
+}
+
+.backHomeMobile div {
+  font-size: 2vw;
 }
 
 .backgroundPicture {
@@ -838,15 +843,13 @@ nav ul li::after {
   }
   .backgroundPicture:not(#mainPage .backgroundPicture) {
     width: 195vw;
+    height: 101vh;
   }
   section h4:not(#mainPage h4) {
     -webkit-writing-mode: vertical-rl;
         -ms-writing-mode: tb-rl;
             writing-mode: vertical-rl;
     text-orientation: upright;
-  }
-  .backHome {
-    display: none;
   }
   #leavingPage {
     background-image: none;
@@ -860,7 +863,7 @@ nav ul li::after {
             flex-direction: column;
   }
   #leavingPage .cardsContainer .leavingCard {
-    width: 87vw;
+    width: 88vw;
     height: 25vh;
     border-radius: 0;
   }

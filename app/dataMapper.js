@@ -15,21 +15,22 @@ const dataMapper = {
 
     },
 
-    getMonthAndNextMonth: async (actualMonth, nextMonth, callback) => {
+    getMonthAndNextMonth: (actualMonth, nextMonth, callback) => {
         // console.log(actualMonth, nextMonth)
        
         const query = {
-            text: `SELECT * FROM "events" WHERE "month" in ($1, $2)`,
+            text: `SELECT * FROM "events" WHERE "month" in ($1, $2) ORDER BY "month" desc, "day"`,
             values: [actualMonth, nextMonth]
         }
         try {
-            return await database.query(query, callback);
+            database.query(query, callback);          
+            
         } catch (error) {
             console.error(error);
         }
        
         
-    },
+    },  
 
     updateData: (monthString, callback) => {
         

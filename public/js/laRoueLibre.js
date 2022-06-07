@@ -15,14 +15,22 @@ if (history.scrollRestoration) {
 
 // bacKHome opacity 1 on scroll --------------------------------------------------------------------
 const backHome = document.querySelector('.backHome');
+const backHomeMobile = document.querySelector('.backHomeMobile');
+const wrapper = document.querySelector('.wrapper');
 
-window.addEventListener('scroll', () => { 
+
+
+wrapper.addEventListener('scroll', () => { 
   
-  if (window.scrollY < 200) {
+  if (wrapper.scrollTop < 200) {
     backHome.style.display = "none";
-  } else {
-
+    backHomeMobile.style.display = "none";
+;
+  } else if (wrapper.clientWidth > 850){
     backHome.style.display = "block";
+  } else {
+    backHomeMobile.style.display = "block"
+
   }
 });
 
@@ -39,7 +47,6 @@ window.addEventListener('load', () => {
 // H5 animation -------------------------------------------------------------
 
 const titles = document.querySelectorAll('h5')
-const wrapper = document.querySelector('.wrapper');
 
 
 wrapper.addEventListener('scroll', () => {
@@ -73,11 +80,11 @@ const comingEventsContainer = document.querySelector('.comingEventsContainer');
 
 
 deployMoreInfo.addEventListener('click', () => {
-  socialMediaContainer.style.width = socialMediaContainer.style.width === '' ? '80%' : '';
+  socialMediaContainer.style.width = socialMediaContainer.style.width === '' ? '350px' : '';
   socialMediaContainer.style.transition = "0.8s ease";
   document.querySelectorAll(".socialMedia > p").forEach((p) => {
     p.classList.toggle('--hidden');    
-    p.style.width = "90%";   
+    p.style.width = "85%";   
     p.style.textAlign = "center";
   })
   document.querySelectorAll(".socialMedia").forEach((div) => {
