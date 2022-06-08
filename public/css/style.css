@@ -130,6 +130,15 @@ section:not(#mainPage) .card {
   -webkit-box-shadow: 1px 1px 6px 0px black;
           box-shadow: 1px 1px 6px 0px black;
   padding: 0.2rem;
+  -webkit-transform: translateX(100vw);
+          transform: translateX(100vw);
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
+}
+
+section:not(#mainPage) .card.active {
+  -webkit-transform: translate(0);
+          transform: translate(0);
 }
 
 section:not(#mainPage) .--bigCard {
@@ -332,6 +341,9 @@ section:not(#mainPage) .backgroundPicture {
 #eventsPage .event__card,
 #mainPage .event__card,
 .data-render .event__card {
+  -webkit-transition: 1.5s ease;
+  transition: 1.5s ease;
+  opacity: 0;
   background-color: rgba(255, 255, 255, 0.705);
   width: 180px;
   height: 180px;
@@ -348,6 +360,12 @@ section:not(#mainPage) .backgroundPicture {
       grid-template-rows: 1fr 0.6fr 1.4fr;
       grid-template-areas: ". ." "event__title event__title" "event__description event__description";
   gap: 0.1rem 0.1rem;
+}
+
+#eventsPage .event__card.active,
+#mainPage .event__card.active,
+.data-render .event__card.active {
+  opacity: 1;
 }
 
 #eventsPage .event__card .event__day,
@@ -409,6 +427,10 @@ section:not(#mainPage) .backgroundPicture {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: event__description;
+}
+
+#mainPage .comingEvents .event__card {
+  opacity: 1;
 }
 
 #eventsPage .event__card.--hidden {

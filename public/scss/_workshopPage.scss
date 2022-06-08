@@ -25,6 +25,13 @@ section:not(#mainPage) {
         font-size: 1rem;
         box-shadow: 1px 1px 6px 0px black;
         padding: 0.2rem;
+        transform: translateX(100vw);
+        transition: 1s ease;
+    }
+    
+    .card.active {
+        transform: translate(0);
+        // opacity: 1;
     }
 
     .--bigCard {
@@ -190,7 +197,10 @@ section:not(#mainPage) {
         margin: 1rem auto;
     }
     
+    
     .event__card {
+        transition: 1.5s ease;
+        opacity: 0;
         background-color: $backgroundColorWhite;
         width: 180px;
         height: 180px;
@@ -206,6 +216,11 @@ section:not(#mainPage) {
             "event__title event__title"
             "event__description event__description";
         gap: 0.1rem 0.1rem;
+
+       
+        &.active {
+            opacity: 1;
+        }
 
         .event__day {
             font-size: 2rem;
@@ -245,6 +260,10 @@ section:not(#mainPage) {
             grid-area: event__description;
         }
     }
+}
+
+#mainPage .comingEvents .event__card {
+    opacity: 1;
 }
 
 #eventsPage .event__card.--hidden {
