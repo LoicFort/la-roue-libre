@@ -87,7 +87,7 @@ wrapper.addEventListener('scroll', () => {
 
   }
   for (let i = 0; i < eventsCard.length; i++) {
-    if (scrollTop > (scrollTop + eventsCardsFromTop[i]).toFixed() - clientHeight * 0.80) {
+    if (scrollTop > (scrollTop + eventsCardsFromTop[i]).toFixed() - clientHeight * 0.65) {
       eventsCard[i].classList.add('active')
     } else {
       eventsCard[i].classList.remove('active')

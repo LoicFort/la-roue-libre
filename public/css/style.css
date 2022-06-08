@@ -132,8 +132,8 @@ section:not(#mainPage) .card {
   padding: 0.2rem;
   -webkit-transform: translateX(100vw);
           transform: translateX(100vw);
-  -webkit-transition: 1s ease;
-  transition: 1s ease;
+  -webkit-transition: 1.5s ease;
+  transition: 1.5s ease;
 }
 
 section:not(#mainPage) .card.active {
