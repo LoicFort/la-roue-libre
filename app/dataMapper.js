@@ -1,4 +1,4 @@
-const database = require('./database');
+import database from './database.js';
 
 const dataMapper = {
 
@@ -84,4 +84,4 @@ const dataMapper = {
 
 
 
-module.exports = dataMapper;
+export default dataMapper;

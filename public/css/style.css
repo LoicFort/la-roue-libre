@@ -144,7 +144,8 @@ section:not(#mainPage) .card.active {
 section:not(#mainPage) .--bigCard {
   width: 12rem;
   height: 12rem;
-  background-color: rgba(0, 0, 0, 0.808);
+  background-color: rgba(72, 145, 213, 0.705);
+  font-weight: bold;
   color: white;
 }
 
@@ -213,7 +214,7 @@ section:not(#mainPage) .backgroundPicture {
 }
 
 .container h5 {
-  background-color: rgba(0, 0, 0, 0.808);
+  background-color: rgba(72, 145, 213, 0.705);
   color: white;
   text-align: center;
   margin-top: 1rem;
@@ -383,8 +384,6 @@ section:not(#mainPage) .backgroundPicture {
   width: 70%;
   padding: 0.2rem;
   overflow: hidden;
-  -webkit-filter: grayscale(1);
-          filter: grayscale(1);
 }
 
 #eventsPage .event__card .event__title,
@@ -469,15 +468,94 @@ section:not(#mainPage) .backgroundPicture {
   padding: 1rem;
 }
 
-.event__card {
-  position: relative;
+.previewData {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 1rem auto;
 }
 
-.event__card .deleteButton {
+.previewData .event__card {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.705);
+  width: 180px;
+  height: 180px;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  overflow: hidden;
+  -webkit-box-shadow: 1px 1px 6px 0px black;
+          box-shadow: 1px 1px 6px 0px black;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 0.6fr 1.4fr;
+      grid-template-rows: 1fr 0.6fr 1.4fr;
+      grid-template-areas: ". ." "event__title event__title" "event__description event__description";
+  gap: 0.1rem 0.1rem;
+}
+
+.previewData .event__card.active {
+  opacity: 1;
+}
+
+.previewData .event__card .event__day {
+  font-size: 2rem;
+  overflow: hidden;
+  text-align: center;
+  margin: auto;
+}
+
+.previewData .event__card .event__logo {
+  width: 70%;
+  padding: 0.2rem;
+  overflow: hidden;
+}
+
+.previewData .event__card .event__title,
+.previewData .event__card .event__description {
+  font-size: 0.8rem;
+  overflow: hidden;
+}
+
+.previewData .event__card .event__title {
+  background-color: rgba(0, 0, 0, 0.808);
+  color: aquamarine;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: event__title;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.previewData .event__card .event__description {
+  font-style: italic;
+  padding: 0.2rem;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: event__description;
+}
+
+.previewData .event__card .deleteButton {
   position: absolute;
   top: 0;
   right: 0.1rem;
   background-color: red;
+  color: black;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -486,7 +564,7 @@ section:not(#mainPage) .backgroundPicture {
   border-radius: 5px;
 }
 
-.event__card .deleteButton:hover {
+.previewData .event__card .deleteButton:hover {
   cursor: pointer;
 }
 
@@ -517,6 +595,7 @@ a {
   overflow-x: hidden;
   -webkit-perspective: 10px;
           perspective: 10px;
+  scroll-behavior: smooth;
 }
 
 header {
@@ -711,6 +790,11 @@ nav ul li::after {
   z-index: 50;
 }
 
+.socialMediaContainer.active {
+  -webkit-animation: open 1s forwards;
+          animation: open 1s forwards;
+}
+
 .socialMediaContainer img {
   width: 3rem;
 }
@@ -737,6 +821,24 @@ nav ul li::after {
 
 .socialMediaContainer .shopPhone, .socialMediaContainer .coffeePhone {
   cursor: pointer;
+}
+
+@-webkit-keyframes open {
+  0% {
+    width: 250px;
+  }
+  100% {
+    width: 350px;
+  }
+}
+
+@keyframes open {
+  0% {
+    width: 250px;
+  }
+  100% {
+    width: 350px;
+  }
 }
 
 .showInfo {

@@ -1,9 +1,9 @@
-require('dotenv').config();
+import 'dotenv/config';
 
 
-const express = require('express');
-const router = require('./app/router.js');
-const path = require('path');
+import express, { urlencoded, static as fix } from 'express';
+import router from './app/router.js';
+import path from 'path';
 const app = express();
 
 // En attente de finalisation du projet
@@ -13,8 +13,8 @@ const app = express();
 
 
 
-app.use(express.urlencoded({extended: true}));
-app.use(express.static('./public'));
+app.use(urlencoded({extended: true}));
+app.use(fix('./public'));
 app.set('view engine', 'ejs');
 app.set('views','./app/views'); 
 

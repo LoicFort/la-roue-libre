@@ -36,6 +36,7 @@ a {
     overflow-y: auto;
     overflow-x: hidden;    
     perspective: 10px;
+    scroll-behavior: smooth;
 }
 
 header {
@@ -180,11 +181,16 @@ nav {
     border-radius: 0.5rem;   
     position: absolute; 
     top: 0;
-    transform: translateY(35vh);
-    
+    transform: translateY(35vh);    
     padding: 0.5rem; 
     color: white;
-    z-index:50;
+    z-index:50; 
+
+
+
+    &.active {
+    animation: open 1s forwards;
+    }
 
     img {
         width: 3rem;
@@ -213,6 +219,16 @@ nav {
     }
 }
 
+@keyframes open {
+    0% {
+        width: 250px;        
+    }
+
+    100% {
+        width: 350px;        
+    }
+    
+}
 
 .showInfo {
     // width: 35vw;

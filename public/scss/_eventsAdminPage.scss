@@ -1,24 +1,94 @@
 .adminEventsContainer {
-    padding: 1rem;
-
-        
+    padding: 1rem;        
 }
 
-.event__card {
-    position: relative;
 
-    .deleteButton {
-        position: absolute;
-        top: 0;
-        right: 0.1rem;
-        background-color: red;
-        width: fit-content;
-        margin: 0.1rem;
-        padding: 0.2rem;
-        border-radius: 5px;
+.previewData {
 
-        &:hover {
-            cursor: pointer;
+    display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 1rem auto;
+
+    .event__card {    
+        position: relative;
+        background-color: $backgroundColorWhite;
+        width: 180px;
+        height: 180px;
+        border-radius: 0.5rem;
+        margin: 0.5rem;
+        overflow: hidden;
+        box-shadow: 1px 1px 6px 0px black;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 0.6fr 1.4fr;
+        grid-template-areas:
+            ". ."
+            "event__title event__title"
+            "event__description event__description";
+        gap: 0.1rem 0.1rem;
+
+       
+        &.active {
+            opacity: 1;
+        }
+
+        .event__day {
+            font-size: 2rem;
+            overflow: hidden;
+            text-align: center;
+            margin:auto;
+        }
+
+        .event__logo {
+            width: 70%;
+            // height: 100%;
+            padding: 0.2rem;
+            overflow: hidden;
+            
+        }
+
+        .event__title,
+        .event__description {
+            font-size: 0.8rem;
+            overflow: hidden;
+        }
+
+        .event__title {
+            // font-weight: bold;
+            background-color: $backgroundColorBlack;
+            color: aquamarine;
+            grid-area: event__title;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .event__description {
+            font-style: italic;
+            padding: 0.2rem;
+            grid-area: event__description;
+        }
+    
+    
+        .deleteButton {
+            position: absolute;
+            top: 0;
+            right: 0.1rem;
+            background-color: red;
+            color: black;
+            width: fit-content;
+            margin: 0.1rem;
+            padding: 0.2rem;
+            border-radius: 5px;
+    
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
+    
 }
+
+

@@ -37,7 +37,8 @@ section:not(#mainPage) {
     .--bigCard {
         width: 12rem;
         height: 12rem;
-        background-color: $backgroundColorBlack;
+        background-color: $backgroundColorBlue;
+        font-weight: bold;
         color: white;
     }
 
@@ -94,7 +95,7 @@ section:not(#mainPage) {
     overflow: hidden;
 
     h5 {
-        background-color: $backgroundColorBlack;
+        background-color: $backgroundColorBlue;
         color: white;
         text-align: center;
         margin-top: 1rem;
@@ -123,7 +124,16 @@ section:not(#mainPage) {
     font-size: 1.5rem;
     overflow: hidden;
     padding-bottom: 0.5rem;
-}
+};
+
+// .photosSlider .--hidden {
+//     display: none;
+// }
+
+
+
+
+
 
 #leavingPage {
     background-image: url("/images/forever.jpg");
@@ -196,8 +206,7 @@ section:not(#mainPage) {
         justify-content: space-around;
         margin: 1rem auto;
     }
-    
-    
+        
     .event__card {
         transition: 1.5s ease;
         opacity: 0;
@@ -234,7 +243,7 @@ section:not(#mainPage) {
             // height: 100%;
             padding: 0.2rem;
             overflow: hidden;
-            filter: grayscale(1);
+            
         }
 
         .event__title,

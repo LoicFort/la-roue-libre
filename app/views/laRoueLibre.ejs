@@ -44,11 +44,11 @@
                                 <li class="nav-link">Café</li>
                             </a>
                             <a href="#eventsPage">
-                                <li class="nav-link">Evènements</li>
+                                <li class="nav-link">Evénements</li>
                             </a>
-                            <a href="#leavingPage">
+                            <!-- <a href="#leavingPage">
                                 <li class="nav-link --flexGrow">Envie de partir ?</li>
-                            </a>
+                            </a> -->
                         </ul>
                     </nav>
                 </div>
@@ -105,7 +105,7 @@
                         <h3 class="presentation__title">Le café-vélo des voyageurs</h3>
                         <h3 class="presentation__subtitle">au quotidien et au long cours</h3>
                         <div class="comingEventsContainer">
-                            <h4>les prochains évènements de <%= actualMonthString %>
+                            <h4>les prochains événements de <%= actualMonthString %>
                             </h4>
                             <div class="comingEvents">
                                 
@@ -151,7 +151,7 @@
                     <p class="card">Montage à la carte</p>
                     <p class="card">Pompe libre service</p>
                     <p class="card">Peinture de votre cadre préféré</p>
-                    <p class="card">Marquage bicicode</p>
+                    <!-- <p class="card">Marquage bicicode</p> -->
                 </div>
             </div>
 
@@ -198,7 +198,10 @@
                     <p class="card --bigCard">Les burritos végétariens</p>
                     <p class="card --bigCard">Boissons froides et chaudes</p>
                     <p class="card">Wifi gratuit</p>
-                    <p class="card">Photos de notre terrasse</p>
+                    <p class="card photos">Photos de notre terrasse</p>
+                </div>
+                <div class="photosSlider --hidden">
+                    <img src="<%=photos%>" alt="">
                 </div>
             </div>
 
@@ -281,8 +284,8 @@
         <!-- leaving -->
 
 
-        <section id="leavingPage">
-            <!-- <img src="/images/forever.jpg" alt="" class="backgroundPicture"> -->
+        <!-- <section id="leavingPage">
+          
             <div class="sideBar">
                 <h4>Partir...</h4>
             </div>
@@ -303,7 +306,7 @@
             </div>
 
 
-        </section>
+        </section> -->
 
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>

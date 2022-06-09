@@ -1,4 +1,4 @@
-const dataMapper = require('../dataMapper');
+import dataMapper from '../dataMapper.js';
 
 const adminController = {
 
@@ -90,4 +90,4 @@ const adminController = {
 
 
 
-module.exports = adminController;
+export default adminController;

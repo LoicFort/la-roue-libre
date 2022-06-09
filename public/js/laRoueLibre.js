@@ -1,8 +1,6 @@
 // on refresh / load go to the top of the page
 window.onload = function () {
-
-  window / scrollTo(0, 0)
-
+  window / scrollTo(0, 0);
 }
 
 if (history.scrollRestoration) {
@@ -11,7 +9,7 @@ if (history.scrollRestoration) {
   window.onbeforeunload = function () {
     window.scrollTo(0, 0);
   }
-}
+};
 
 // bacKHome opacity 1 on scroll --------------------------------------------------------------------
 const backHome = document.querySelector('.backHome');
@@ -93,26 +91,27 @@ wrapper.addEventListener('scroll', () => {
       eventsCard[i].classList.remove('active')
     }
 
-  } 
+  }
 
 
-  })
+})
 
 
 
 // Deploy contact container (.gafa) to show more info--------------------------------------------------------
 
-const deployMoreInfo = document.querySelector('.socialMediaContainer', ":after");
 const socialMediaContainer = document.querySelector('.socialMediaContainer');
+const socialMediaAfter = document.querySelector(('.socialMediaContainer'), ':after');
 const mainPageTitle = document.querySelector('.presentation');
 const comingEventsContainer = document.querySelector('.comingEventsContainer');
 
 
 
-deployMoreInfo.addEventListener('click', () => {
+socialMediaAfter.addEventListener('click', () => {
   socialMediaContainer.style.width = socialMediaContainer.style.width === '' ? '350px' : '';
-  socialMediaContainer.style.transition = "0.8s ease";
+
   document.querySelectorAll(".socialMedia > p").forEach((p) => {
+
     p.classList.toggle('--hidden');
     p.style.width = "85%";
     p.style.textAlign = "center";
@@ -179,5 +178,13 @@ document.querySelectorAll('.number').forEach((number) => {
 
 });
 
+// Instagram photo slider 
+
+const handlePhotoSlider = () => {
+  photoSlider.classList.toggle('--hidden');
+}
 
 
+const cardPhotos = document.querySelector('p.card.photos');
+const photoSlider = document.querySelector('.photosSlider');
+cardPhotos.addEventListener('click', handlePhotoSlider)
