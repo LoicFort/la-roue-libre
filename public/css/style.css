@@ -105,9 +105,66 @@ section:not(#mainPage) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+section:not(#mainPage) .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80%;
+}
+
+section:not(#mainPage) .contentContainer {
+  width: 80%;
+  height: 100%;
+  margin-top: 2rem;
+  height: 109%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+section:not(#mainPage) .cardsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  overflow: hidden;
+  width: 80%;
+}
+
+section:not(#mainPage) .pContainer {
+  margin: 2;
+  font-size: 1.5rem;
+}
+
+section:not(#mainPage) .pContainer p {
+  margin: 1.5rem;
 }
 
 section:not(#mainPage) .card {
@@ -142,9 +199,9 @@ section:not(#mainPage) .card.active {
 }
 
 section:not(#mainPage) .--bigCard {
-  width: 12rem;
-  height: 12rem;
-  background-color: rgba(72, 145, 213, 0.705);
+  width: 15rem;
+  height: 15rem;
+  background-color: rgba(64, 128, 197, 0.705);
   font-weight: bold;
   color: white;
 }
@@ -156,21 +213,6 @@ section:not(#mainPage) .backgroundPicture {
   top: 0;
   left: 0;
   z-index: -5;
-}
-
-.sideBar {
-  width: 12vw;
-  min-height: 100vh;
-  background-color: rgba(255, 255, 255, 0.705);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .sideBar h4 {
@@ -214,7 +256,7 @@ section:not(#mainPage) .backgroundPicture {
 }
 
 .container h5 {
-  background-color: rgba(72, 145, 213, 0.705);
+  background-color: rgba(64, 128, 197, 0.705);
   color: white;
   text-align: center;
   margin-top: 1rem;
@@ -239,24 +281,6 @@ section:not(#mainPage) .backgroundPicture {
   -webkit-transform: translate(0%);
           transform: translate(0%);
   opacity: 1;
-}
-
-.content {
-  width: 100%;
-  height: 91%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  font-size: 1.5rem;
-  overflow: hidden;
-  padding-bottom: 0.5rem;
 }
 
 #leavingPage {
@@ -591,7 +615,6 @@ a {
 
 .wrapper {
   height: 100vh;
-  overflow-y: auto;
   overflow-x: hidden;
   -webkit-perspective: 10px;
           perspective: 10px;
@@ -621,17 +644,50 @@ header {
           transform-style: preserve-3d;
 }
 
-.backHome, .backHomeMobile {
-  display: none;
-  background-color: rgba(0, 0, 0, 0.808);
-  color: white;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 12vw;
+#backHome {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 50;
+  top: 15vh;
+  left: 0.5rem;
+  opacity: 0;
+  -webkit-transition: 0.8s ease;
+  transition: 0.8s ease;
+}
+
+#backHome ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 9vw;
   padding: 0.5rem;
-  z-index: 10;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.705);
+}
+
+#backHome li {
+  color: black;
+}
+
+#backHome li:hover {
+  color: rgba(64, 128, 197, 0.705);
+}
+
+#backHome a:after {
+  content: "";
+  height: 10vh;
+  width: 2px;
+  color: black;
+  position: absolute;
+}
+
+#backHome .home {
+  text-align: center;
+  color: red;
 }
 
 .backHomeMobile div {
@@ -640,8 +696,8 @@ header {
 
 .backgroundPicture {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 110%;
+  height: 110%;
   -o-object-fit: cover;
      object-fit: cover;
   overflow-x: hidden;
@@ -724,12 +780,11 @@ header {
   text-align: center;
 }
 
-nav {
+nav:not(#backHome) {
   width: 100%;
-  overflow: hidden;
 }
 
-nav ul {
+nav:not(#backHome) ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -738,7 +793,7 @@ nav ul {
   margin-top: 1.6rem;
 }
 
-nav ul a {
+nav:not(#backHome) ul a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -748,9 +803,10 @@ nav ul a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
 }
 
-nav ul li {
+nav:not(#backHome) ul li {
   font-size: 1.5rem;
   height: 100%;
   width: 100%;
@@ -765,26 +821,16 @@ nav ul li {
           justify-content: center;
 }
 
-nav ul li:hover {
+nav:not(#backHome) ul li:hover {
   text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black;
-}
-
-nav ul li::after {
-  display: block;
-  content: attr(title);
-  font-weight: bold;
-  height: 0;
-  overflow: hidden;
-  visibility: hidden;
 }
 
 .socialMediaContainer {
   background-color: rgba(0, 0, 0, 0.808);
   border-radius: 0.5rem;
   position: absolute;
-  top: 0;
-  -webkit-transform: translateY(35vh);
-          transform: translateY(35vh);
+  top: 10vh;
+  left: 0;
   padding: 0.5rem;
   color: white;
   z-index: 50;
@@ -799,7 +845,7 @@ nav ul li::after {
   width: 3rem;
 }
 
-.socialMediaContainer::after {
+.socialMediaContainer:after {
   content: "détails";
   font-size: 0.6rem;
   font-weight: bold;
@@ -819,7 +865,8 @@ nav ul li::after {
   padding: 0.1rem;
 }
 
-.socialMediaContainer .shopPhone, .socialMediaContainer .coffeePhone {
+.socialMediaContainer .shopPhone,
+.socialMediaContainer .coffeePhone {
   cursor: pointer;
 }
 
@@ -863,6 +910,11 @@ nav ul li::after {
   padding: 1rem;
 }
 
+.mainPageContainer {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
 .presentation {
   color: aliceblue;
   width: 100vw;
@@ -883,8 +935,8 @@ nav ul li::after {
   position: relative;
   -webkit-transition: 1s ease;
   transition: 1s ease;
-  -webkit-transform: rotate3d(0, 0, 0, 0deg);
-          transform: rotate3d(0, 0, 0, 0deg);
+  -webkit-transform: translateZ(-5px) scale(1.5);
+          transform: translateZ(-5px) scale(1.5);
 }
 
 .presentation .presentation__title {

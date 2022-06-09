@@ -7,11 +7,45 @@ section:not(#mainPage) {
     min-height: 100vh;
     width: 100vw;
     display: flex;
-    flex-wrap: wrap;
-    overflow: hidden;
 
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 80%;
+    }
 
-    // p = card / tuile avec infos pour chaque rubrique workshop, coffee...
+    .contentContainer {
+        width: 80%;
+        height: 100%;
+        margin-top: 2rem;
+        height: 109%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-around;
+
+    }
+
+    .cardsContainer {
+        display: flex;       
+        align-items: center;        
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width:80%;
+        
+    }
+
+    .pContainer {
+        margin: 2;
+        font-size: 1.5rem;
+
+        p {
+            margin:1.5rem;
+        }
+    }
+
     .card {
         background-color: $backgroundColorWhite;
         width: 10rem;
@@ -28,22 +62,21 @@ section:not(#mainPage) {
         transform: translateX(100vw);
         transition: 1.5s ease;
     }
-    
+
     .card.active {
         transform: translate(0);
         // opacity: 1;
     }
 
     .--bigCard {
-        width: 12rem;
-        height: 12rem;
+        width: 15rem;
+        height: 15rem;
         background-color: $backgroundColorBlue;
         font-weight: bold;
         color: white;
     }
 
     .backgroundPicture {
-       
         width: 100vw;
         position: absolute;
         overflow: hidden;
@@ -54,12 +87,12 @@ section:not(#mainPage) {
 }
 
 .sideBar {
-    width: 12vw;
-    min-height: 100vh;
-    background-color: $backgroundColorWhite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // width: 12vw;
+    // min-height: 100vh;
+    // background-color: $backgroundColorWhite;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
 
     h4 {
         font-size: 1.2rem;
@@ -67,7 +100,7 @@ section:not(#mainPage) {
 }
 
 .comingEventsContainer {
-    width: fit-content;  
+    width: fit-content;
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -85,7 +118,6 @@ section:not(#mainPage) {
         border-radius: 1rem;
     }
 }
-
 
 .container {
     width: 80vw;
@@ -114,26 +146,21 @@ section:not(#mainPage) {
     }
 }
 
-.content {
-    width: 100%;
-    height: 91%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
-    font-size: 1.5rem;
-    overflow: hidden;
-    padding-bottom: 0.5rem;
-};
+// .content {
+//     width: 100%;
+//     height: 91%;
+//     display: flex;
+//     flex-wrap: wrap;
+//     align-items: center;
+//     justify-content: space-around;
+//     font-size: 1.5rem;
+//     overflow: hidden;
+//     padding-bottom: 0.5rem;
+// };
 
 // .photosSlider .--hidden {
 //     display: none;
 // }
-
-
-
-
-
 
 #leavingPage {
     background-image: url("/images/forever.jpg");
@@ -151,7 +178,7 @@ section:not(#mainPage) {
         .leavingCard {
             width: 30vw;
             height: 40vh;
-            overflow: hidden;            
+            overflow: hidden;
             border-radius: 1rem;
             transition: 0.3s;
             // background-clip: content-box;
@@ -206,7 +233,7 @@ section:not(#mainPage) {
         justify-content: space-around;
         margin: 1rem auto;
     }
-        
+
     .event__card {
         transition: 1.5s ease;
         opacity: 0;
@@ -226,7 +253,6 @@ section:not(#mainPage) {
             "event__description event__description";
         gap: 0.1rem 0.1rem;
 
-       
         &.active {
             opacity: 1;
         }
@@ -235,7 +261,7 @@ section:not(#mainPage) {
             font-size: 2rem;
             overflow: hidden;
             text-align: center;
-            margin:auto;
+            margin: auto;
         }
 
         .event__logo {
@@ -243,7 +269,6 @@ section:not(#mainPage) {
             // height: 100%;
             padding: 0.2rem;
             overflow: hidden;
-            
         }
 
         .event__title,
@@ -292,7 +317,6 @@ section:not(#mainPage) {
 // Button download events
 
 .eventsDownloadButton {
-    
     background-color: $backgroundColorBlack;
     color: aquamarine;
     padding: 0.2rem 0.6rem;

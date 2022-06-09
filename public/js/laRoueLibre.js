@@ -11,25 +11,73 @@ if (history.scrollRestoration) {
   }
 };
 
-// bacKHome opacity 1 on scroll --------------------------------------------------------------------
-const backHome = document.querySelector('.backHome');
-const backHomeMobile = document.querySelector('.backHomeMobile');
 const wrapper = document.querySelector('.wrapper');
 
 
+// bacKHome opacity 1 on scroll --------------------------------------------------------------------
+const backHome = document.querySelector('#backHome');
 
 wrapper.addEventListener('scroll', () => {
+  const { clientHeight } = document.documentElement;
+  console.log(wrapper.scrollTop, clientHeight * 0.96);
 
-  if (wrapper.scrollTop < 200) {
-    backHome.style.display = "none";
-    backHomeMobile.style.display = "none";
-    ;
-  } else if (wrapper.clientWidth > 850) {
-    backHome.style.display = "block";
-  } else {
-    backHomeMobile.style.display = "block"
+  const resize = (className) => {
+    document.querySelectorAll('#backHome li').forEach((link) => {
+      link.style.fontSize = "1rem";
+      link.style.fontWeight = "";
+      link.style.textDecoration = "none";
+      console.log('resize')
+    })
+    const navlink = document.querySelector(`.${className}`);  
+    navlink.style.fontSize = "1.5rem";
+    navlink.style.fontweight = "bold";    
+  }
+
+
+  switch (true) {
+    case wrapper.scrollTop > clientHeight * 0.96 && wrapper.scrollTop < clientHeight * 1.93:
+      backHome.style.opacity = 1;
+      const atelier = document.querySelector('.atelier').className;
+      resize(atelier);
+      const liAtelier = document.querySelector('.atelier');      
+      liAtelier.style.textDecoration = "underline";   
+      break;
+    case wrapper.scrollTop > clientHeight * 1.93 && wrapper.scrollTop < clientHeight * 2.93:
+      const magasin = document.querySelector('.magasin').className;      
+      resize(magasin);  
+      const liMagasin = document.querySelector('.magasin');      
+      liMagasin.style.textDecoration = "underline";  
+      break;
+    case wrapper.scrollTop > clientHeight * 2.93 && wrapper.scrollTop < clientHeight * 3.93:
+      const café = document.querySelector('.café').className;          
+      resize(café);
+      const liCafé = document.querySelector('.café');      
+      liCafé.style.textDecoration = "underline";  
+      break;
+    case wrapper.scrollTop > clientHeight * 3.93:
+      const événements = document.querySelector('.événements').className;      
+      resize(événements);
+      const liEvénenements = document.querySelector('.événements');      
+      liEvénenements.style.textDecoration = "underline";
+      break;
+    default:
+      backHome.style.opacity = 0;
+      console.log('----------------------defaut')
+
 
   }
+
+
+
+  // if (wrapper.scrollTop > clientHeight * 0.96) {
+  //   backHome.style.opacity = 1;
+  //   const li = document.querySelector('.nav-link:first-of-type');
+  //   console.log(li.textContent)    
+  //   li.style.fontSize = "6rem";
+  // } else {
+  //   backHome.style.opacity = 0;
+  // }
+
 });
 
 
@@ -48,6 +96,7 @@ window.addEventListener('load', () => {
 const titles = document.querySelectorAll('h5');
 const cards = document.querySelectorAll('.card');
 const eventsCard = document.querySelectorAll('#eventsPage .event__card');
+
 
 // wrapper already declare above
 wrapper.addEventListener('scroll', () => {
